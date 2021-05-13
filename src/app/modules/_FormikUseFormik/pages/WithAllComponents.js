@@ -14,8 +14,6 @@ import FormikCheckBoxGroup from "../../Common/components/CustomFormik/FormikChec
 import FormikDatePicker from "../../Common/components/CustomFormik/FormikDatePicker";
 import FormikDateTimePicker from "../../Common/components/CustomFormik/FormikDateTimePicker";
 import FormikTimePicker from "../../Common/components/CustomFormik/FormikTimePicker";
-import FormikAutoComplete from "../../Common/components/CustomFormik/FormikAutoComplete";
-import * as employeeAxios from '../../_EmployeeDemo/_redux/employeeAxios'
 
 function WithTextField() {
   const [title] = React.useState([
@@ -41,28 +39,6 @@ function WithTextField() {
         new Date().getDate()
       )
   );
-
-  const [relatedEmployee, setRelatedEmployee] = React.useState({id: "", firstName: '' })
-
-  React.useEffect(() => {
-    // getRelatedEmployee
-    let id = 'e1b57a9c-23e3-409f-1c6a-08d8bcedf819'
-    employeeAxios.getEmployee(id)
-    .then((res)=>{
-      if (res.data.isSuccess) {
-        setRelatedEmployee({...relatedEmployee,id:res.data.data.id,firstName:res.data.data.firstName})
-      }else(
-        alert(res.data.message)
-      )
-    })
-    .catch((err) => {
-      alert(err.message)
-    })
-  }, [])
-
-  const loadEmployee = (firstName) => {
-    return employeeAxios.getEmployeeFilter('firstName',true,1,50,'',firstName,'')
-  }
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -91,7 +67,6 @@ function WithTextField() {
       birthDate: today,
       nextMeeting: today,
       breakfastTime: today,
-      relatedToEmployee: relatedEmployee
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -200,7 +175,7 @@ function WithTextField() {
           <FormikRating formik={formik} name="rating" label="Rating" />
         </Grid>
 
-        {/* relatedToEmployee */}
+        {/* relatedToEmployee
         <Grid item xs={12} lg={3}>
           <FormikAutoComplete
           formik={formik}
@@ -211,7 +186,7 @@ function WithTextField() {
           displayFieldName="firstName"
           minSearchLen={3}
           />
-        </Grid>
+        </Grid> */}
 
         <Grid item xs={12} lg={3}>
           <Button type="submit" fullWidth variant="contained">

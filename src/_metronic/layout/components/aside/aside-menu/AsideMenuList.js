@@ -45,10 +45,10 @@ export function AsideMenuList({ layoutProps }) {
 
         {/*begin::1 Level*/}
         <li
-          className={`menu-item ${getMenuItemActive("/dashboard", false)}`}
+          className={`menu-item ${getMenuItemActive("/test", false)}`}
           aria-haspopup="true"
         >
-          <NavLink className="menu-link" to="/dashboard">
+          <NavLink className="menu-link" to="/test">
             <span className="svg-icon menu-icon">
               <DvrIcon></DvrIcon>
             </span>
@@ -200,103 +200,6 @@ export function AsideMenuList({ layoutProps }) {
               <span className="menu-text">ReduxDemo</span>
             </NavLink>
           </li>
-
-          {/*begin::1 withTextField*/}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/withTextField",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/withTextField">
-              <span className="svg-icon menu-icon">
-                <DvrIcon></DvrIcon>
-              </span>
-              <span className="menu-text">Formik TextField</span>
-            </NavLink>
-          </li>
-
-          {/*begin::1 withTextField*/}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/withCheckboxAndRadio",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/withCheckboxAndRadio">
-              <span className="svg-icon menu-icon">
-                <DvrIcon></DvrIcon>
-              </span>
-              <span className="menu-text">Formik Checkbox Radio</span>
-            </NavLink>
-          </li>
-
-          {/*begin::1 withDropdown*/}
-          <li
-            className={`menu-item ${getMenuItemActive("/withDropdown", false)}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/withDropdown">
-              <span className="svg-icon menu-icon">
-                <DvrIcon></DvrIcon>
-              </span>
-              <span className="menu-text">Formik Dropdown</span>
-            </NavLink>
-          </li>
-
-          {/*begin::1 withDatePicker*/}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/withDatePicker",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/withDatePicker">
-              <span className="svg-icon menu-icon">
-                <DvrIcon></DvrIcon>
-              </span>
-              <span className="menu-text">Formik DatePicker</span>
-            </NavLink>
-          </li>
-
-          {/* begin::section */}
-          <li className="menu-section ">
-            <h4 className="menu-text">Employee</h4>
-            <i className="menu-icon flaticon-more-v2"></i>
-          </li>
-
-          {/* end:: section */}
-
-          {/*begin::1 newEmployee*/}
-          <li
-            className={`menu-item ${getMenuItemActive("/employee/new", false)}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/employee/new">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">New Employee</span>
-            </NavLink>
-          </li>
-          {/*End::1 newEmployee*/}
-
-          {/*begin::1 Employee List*/}
-          <li
-            className={`menu-item ${getMenuItemActive("/employee/", false)}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/employee/">
-              <span className="svg-icon menu-icon">
-                <Icon>supervisor_account</Icon>
-              </span>
-              <span className="menu-text">Employee</span>
-            </NavLink>
-          </li>
-          {/*End::1 Employee List*/}
         </>
 
          {/* begin::section */}
