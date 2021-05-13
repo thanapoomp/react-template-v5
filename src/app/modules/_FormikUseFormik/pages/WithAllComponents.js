@@ -18,24 +18,24 @@ import FormikAutoComplete from "../components/FormikAutoComplete";
 import * as employeeAxios from '../../_EmployeeDemo/_redux/employeeAxios'
 
 function WithTextField() {
-  const [title, setTitle] = React.useState([
+  const [title] = React.useState([
     { id: 1, name: "Mr." },
     { id: 2, name: "Mrs." },
   ]);
 
-  const [gender, setGender] = React.useState([
+  const [gender] = React.useState([
     { id: "1", name: "Male" },
     { id: "2", name: "Female" },
     { id: "3", name: "Unknown" },
   ]);
 
-  const [hobby, setHobby] = React.useState([
+  const [hobby] = React.useState([
     { id: 1, name: "Games" },
     { id: 2, name: "Shopping" },
     { id: 3, name: "Jogging" },
   ]);
 
-  const [today, setToday] = React.useState(new Date(
+  const [today] = React.useState(new Date(
         new Date().getFullYear(),
         new Date().getMonth(),
         new Date().getDate()

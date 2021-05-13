@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-restricted-imports */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
@@ -9,7 +9,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 function FormikAutoComplete(props) {
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = React.useState(false);
   const [searchText, setSearchText] = React.useState("");
 
   React.useEffect(() => {
