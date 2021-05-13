@@ -3,18 +3,18 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikDropdown from "../components/FormikDropdown";
-import FormikTextField from "../components/FormikTextField";
-import FormikSwitch from "../components/FormikSwitch";
-import FormikCheckBox from "../components/FormikCheckBox";
-import FormikSlider from "../components/FormikSlider";
-import FormikRating from "../components/FormikRating";
-import FormikRadioGroup from "../components/FormikRadioGroup";
-import FormikCheckBoxGroup from "../components/FormikCheckBoxGroup";
-import FormikDatePicker from "../components/FormikDatePicker";
-import FormikDateTimePicker from "../components/FormikDateTimePicker";
-import FormikTimePicker from "../components/FormikTimePicker";
-import FormikAutoComplete from "../components/FormikAutoComplete";
+import FormikDropdown from "../../Common/components/CustomFormik/FormikDropdown";
+import FormikTextField from "../../Common/components/CustomFormik/FormikTextField";
+import FormikSwitch from "../../Common/components/CustomFormik/FormikSwitch";
+import FormikCheckBox from "../../Common/components/CustomFormik/FormikCheckBox";
+import FormikSlider from "../../Common/components/CustomFormik/FormikSlider";
+import FormikRating from "../../Common/components/CustomFormik/FormikRating";
+import FormikRadioGroup from "../../Common/components/CustomFormik/FormikRadioGroup";
+import FormikCheckBoxGroup from "../../Common/components/CustomFormik/FormikCheckBoxGroup";
+import FormikDatePicker from "../../Common/components/CustomFormik/FormikDatePicker";
+import FormikDateTimePicker from "../../Common/components/CustomFormik/FormikDateTimePicker";
+import FormikTimePicker from "../../Common/components/CustomFormik/FormikTimePicker";
+import FormikAutoComplete from "../../Common/components/CustomFormik/FormikAutoComplete";
 import * as employeeAxios from '../../_EmployeeDemo/_redux/employeeAxios'
 
 function WithTextField() {
