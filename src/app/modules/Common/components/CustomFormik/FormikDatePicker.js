@@ -12,6 +12,7 @@ function FormikDatePicker(props) {
         name={props.name}
         format="DD/MM/YYYY"
         label={props.label}
+        autoOk={props.autoOk}
         views={["year", "month", "date"]}
         value={props.formik.values[`${props.name}`]}
         onChange={(value) => {
@@ -39,7 +40,8 @@ FormikDatePicker.propTypes = {
     label: PropTypes.string,
     disabled: PropTypes.bool,
     disableFuture: PropTypes.bool,
-    disablePast: PropTypes.bool
+    disablePast: PropTypes.bool,
+    autoOk: PropTypes.bool
   };
   
   // Same approach for defaultProps too
@@ -49,7 +51,8 @@ FormikDatePicker.propTypes = {
     label: "Do not forget to set label",
     disabled: false,
     disableFuture: false,
-    disablePast: false
+    disablePast: false,
+    autoOk: true
   };
 
 export default FormikDatePicker;

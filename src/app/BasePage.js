@@ -16,6 +16,7 @@ import FormWithTextField from './modules/_Demo/pages/FormWithTextField'
 import FormWithAutoComplete from "./modules/_Demo/pages/FormWithAutoComplete";
 import FormWithCheckBox from './modules/_Demo/pages/FormWithCheckBox'
 import FormWithCheckboxGroup from "./modules/_Demo/pages/FormWithCheckboxGroup";
+import FormWithDatePicker from "./modules/_Demo/pages/FormWithDatePicker";
 
 export default function BasePage(props) {
 
@@ -37,6 +38,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithAutoComplete" component={FormWithAutoComplete}/>
         <ContentRoute exact path="/demo/formWithCheckBox" component={FormWithCheckBox}/>
         <ContentRoute exact path="/demo/formWithCheckboxGroup" component={FormWithCheckboxGroup}/>
+        <ContentRoute exact path="/demo/formWithDatePicker" component={FormWithDatePicker}/>
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route

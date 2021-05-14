@@ -8,15 +8,7 @@ function FormDemo() {
   const history = useHistory();
   return (
     <div>
-      <Button
-        onClick={() => {
-          history.push("/demo/formWithTextField");
-        }}
-      >
-        TextFields
-      </Button>
-
-      <Button
+      <Button color="primary"
         onClick={() => {
           history.push("/demo/formWithAutoComplete");
         }}
@@ -24,7 +16,7 @@ function FormDemo() {
         AutoComplete
       </Button>
 
-      <Button
+      <Button color="primary"
         onClick={() => {
           history.push("/demo/formWithCheckBox");
         }}
@@ -32,12 +24,28 @@ function FormDemo() {
         Checkbox
       </Button>
 
-      <Button
+      <Button color="primary"
         onClick={() => {
           history.push("/demo/formWithCheckboxGroup");
         }}
       >
         CheckboxGroup
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
+          history.push("/demo/formWithDatePicker");
+        }}
+      >
+        DatePicker
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
+          history.push("/demo/formWithTextField");
+        }}
+      >
+        TextFields
       </Button>
     </div>
   );
