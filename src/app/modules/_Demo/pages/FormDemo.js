@@ -23,6 +23,14 @@ function FormDemo() {
       >
         AutoComplete
       </Button>
+
+      <Button
+        onClick={() => {
+          history.push("/demo/formWithCheckBox");
+        }}
+      >
+        Checkbox
+      </Button>
     </div>
   );
 }

@@ -14,6 +14,7 @@ import WithAllComponents from "./modules/_FormikUseFormik/pages/WithAllComponent
 import FormDemo from "./modules/_Demo/pages/FormDemo";
 import FormWithTextField from './modules/_Demo/pages/FormWithTextField'
 import FormWithAutoComplete from "./modules/_Demo/pages/FormWithAutoComplete";
+import FormWithCheckBox from './modules/_Demo/pages/FormWithCheckBox'
 
 export default function BasePage(props) {
 
@@ -33,6 +34,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formDemo" component={FormDemo}/>
         <ContentRoute exact path="/demo/formWithTextField" component={FormWithTextField}/>
         <ContentRoute exact path="/demo/formWithAutoComplete" component={FormWithAutoComplete}/>
+        <ContentRoute exact path="/demo/formWithCheckBox" component={FormWithCheckBox}/>
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route
