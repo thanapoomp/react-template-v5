@@ -95,6 +95,7 @@ export function AsideMenuList({ layoutProps }) {
           </li>
 
           {/* end:: section */}
+
           {/*begin::1 Level*/}
           <li
             className={`menu-item menu-item-submenu ${getMenuItemActive(
@@ -202,58 +203,61 @@ export function AsideMenuList({ layoutProps }) {
           </li>
         </>
 
-         {/* begin::section */}
-         <li className="menu-section ">
-            <h4 className="menu-text">UseFormik</h4>
-            <i className="menu-icon flaticon-more-v2"></i>
-          </li>
+        {/* begin::section */}
+        <li className="menu-section ">
+          <h4 className="menu-text">UseFormik</h4>
+          <i className="menu-icon flaticon-more-v2"></i>
+        </li>
 
-          {/* end:: section */}
-           {/*begin::1 newEmployee*/}
-           <li
-            className={`menu-item ${getMenuItemActive("/useFormik/all", false)}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/useFormik/all">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">All</span>
-            </NavLink>
-          </li>
-          {/*End::1 newEmployee*/}
+        {/* end:: section */}
+        {/*begin::1 newEmployee*/}
+        <li
+          className={`menu-item ${getMenuItemActive("/useFormik/all", false)}`}
+          aria-haspopup="true"
+        >
+          <NavLink className="menu-link" to="/useFormik/all">
+            <span className="svg-icon menu-icon">
+              <Icon>star</Icon>
+            </span>
+            <span className="menu-text">All</span>
+          </NavLink>
+        </li>
+        {/*End::1 newEmployee*/}
 
-
-          {/*begin::1 newEmployee*/}
-          <li
-            className={`menu-item ${getMenuItemActive("/useFormik/textfield", false)}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/useFormik/textfield">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">Text field</span>
-            </NavLink>
-          </li>
-          {/*End::1 newEmployee*/}
-          {/*begin::1 newEmployee*/}
-          <li
-            className={`menu-item ${getMenuItemActive("/useFormik/dropdown", false)}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/useFormik/dropdown">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">Dropdown</span>
-            </NavLink>
-          </li>
-          {/*End::1 newEmployee*/}
+        {/*begin::1 newEmployee*/}
+        <li
+          className={`menu-item ${getMenuItemActive(
+            "/useFormik/textfield",
+            false
+          )}`}
+          aria-haspopup="true"
+        >
+          <NavLink className="menu-link" to="/useFormik/textfield">
+            <span className="svg-icon menu-icon">
+              <Icon>star</Icon>
+            </span>
+            <span className="menu-text">Text field</span>
+          </NavLink>
+        </li>
+        {/*End::1 newEmployee*/}
+        {/*begin::1 newEmployee*/}
+        <li
+          className={`menu-item ${getMenuItemActive(
+            "/useFormik/dropdown",
+            false
+          )}`}
+          aria-haspopup="true"
+        >
+          <NavLink className="menu-link" to="/useFormik/dropdown">
+            <span className="svg-icon menu-icon">
+              <Icon>star</Icon>
+            </span>
+            <span className="menu-text">Dropdown</span>
+          </NavLink>
+        </li>
+        {/*End::1 newEmployee*/}
 
         {/* End Demo สามารถ comment ทิ้งได้ */}
-
-        
       </ul>
       {/* end::Menu Nav */}
     </>

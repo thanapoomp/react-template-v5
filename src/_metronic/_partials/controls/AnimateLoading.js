@@ -1,6 +1,7 @@
 import React from "react";
-import {withRouter} from "react-router-dom";
-import {ProgressBar} from "react-bootstrap";
+import { withRouter } from "react-router-dom";
+import { ProgressBar } from "react-bootstrap";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 // TODO: Should be rewrited to pure function
 class AnimateLoading extends React.Component {
@@ -8,7 +9,7 @@ class AnimateLoading extends React.Component {
   stopAnimateTimeout;
   state = {
     width: 0,
-    routeChanged: false
+    routeChanged: false,
   };
 
   componentDidUpdate(nextProps) {
@@ -53,10 +54,12 @@ class AnimateLoading extends React.Component {
     return (
       <div
         className="header-progress-bar"
-        style={{ height: "3px", width: "100%" }}
+        style={{ height: "4px", width: "100%" }}
       >
         {this.state.width > 0 && (
-          <ProgressBar variant="info" now={this.state.width} style={{ height: "3px" }}  />
+          <ProgressBar now={this.state.width} style={{ height: "4px" }} />
+
+          // <LinearProgress variant="determinate" value={progress} />
         )}
       </div>
     );

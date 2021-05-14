@@ -12,16 +12,16 @@ export function HeaderMenu({ layoutProps }) {
       {/*begin::Header Nav*/}
       <ul className={`menu-nav ${layoutProps.ulClasses}`}>
         <div className="d-flex align-items-center">
-          <a
+          {/* <a
             className="btn btn-light btn-sm font-weight-bold"
             id="kt_dashboard_daterangepicker"
             data-toggle="tooltip"
             title="Select dashboard daterange"
             data-placement="left"
           >
-            {/* <span className="text-muted font-weight-bold mr-2" id="kt_dashboard_daterangepicker_title">Today</span> */}
+            {/* <span className="text-muted font-weight-bold mr-2" id="kt_dashboard_daterangepicker_title">Today</span> 
             <Clock></Clock>
-          </a>
+          </a> */}
         </div>
       </ul>
       {/*end::Header Nav*/}

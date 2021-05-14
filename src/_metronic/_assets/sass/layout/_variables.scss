@@ -10,7 +10,8 @@ $root-font-size-md:                             	12px; // Root font size for mob
 // Layout Theme Colors
 $layout-themes: (
 	dark:  #1e1e2d, // Dark theme color
-	light: #ffffff // Light theme color
+	light: #ffffff, // Light theme color
+	blue: $blue-warmGrey
 ) !default;
 
 // Page Background Color
@@ -2342,7 +2343,373 @@ $aside-menu-config: (
 			            )
 			        )
 			    )
-			)
+			),
+
+
+						// blue Theme
+						blue: (
+							// Default Mode
+							default: (
+								// Container
+								self: (
+									bg-color: get($layout-themes, blue)
+								),
+			
+								// Item
+								item: (
+									// Item
+									self: (
+										bg-color: (
+											default: null,
+											open: null,
+											here: null,
+											active: null,
+											hover: null
+										)
+									),
+			
+									// Link
+									link: (
+										self: (
+											bg-color: (
+												default: transparent,
+												open: $blue-warmGray-hover,
+												here: $blue-warmGray-hover,
+												active: $blue-warmGray-hover,
+												hover: $blue-warmGray-hover
+											)
+										),
+			
+										// Icon
+										icon: (
+											font-color:	(
+												default: #494b74,
+												open: $primary,
+												here: $primary,
+												active: $primary,
+												hover: $primary
+											),
+										),
+			
+										// Bullet
+										bullet:	(
+											dot: (
+												bg-color: (
+													default: #5c5e81,
+													open: $primary,
+													here: $primary,
+													active: $primary,
+													hover: $primary
+												)
+											),
+			
+											line: (
+												bg-color: (
+													default: #5c5e81,
+													open: $primary,
+													here: $primary,
+													active: $primary,
+													hover: $primary
+												)
+											)
+										),
+			
+										// Text
+										text:	(
+											font-color:	(
+												default: #a2a3b7,
+												open: #ffffff,
+												here: #ffffff,
+												active: #ffffff,
+												hover: #ffffff
+											),
+											font-size: $h5-font-size,
+											font-weight: $font-weight-bold
+										),
+			
+										// Arrow
+										arrow:	(
+											font-color:	(
+												default: #5c5e81,
+												open: #ffffff,
+												here: #ffffff,
+												active: #ffffff,
+												hover: #ffffff
+											)
+										)
+									),
+			
+									// Submenu
+									submenu: (
+										// Submenu
+										self: (
+											bg-color: (
+												default: null,
+												open: null,
+												active: null,
+												hover: null
+											)
+										),
+			
+										// Item
+										item: (
+											// Item
+											self: (
+												bg-color: (
+													default: null,
+													open: null,
+													here: null,
+													active: null,
+													hover: null
+												)
+											),
+											// Link
+											link: (
+												// Link
+												self: (
+													bg-color: (
+														default: transparent,
+														open: $blue-warmGray-hover,
+														here: $blue-warmGray-hover,
+														active: $blue-warmGray-hover,
+														hover: $blue-warmGray-hover
+													)
+												),
+												// Icon
+												icon:	(
+													font-color:	(
+														default: #494b74,
+														open: $primary,
+														here: $primary,
+														active: $primary,
+														hover: $primary
+													)
+												),
+												// Bullet
+												bullet:	(
+													dot: (
+														bg-color: (
+															default: #5c5e81,
+															open: $primary,
+															here: $primary,
+															active: $primary,
+															hover: $primary
+														)
+													),
+													line: (
+														bg-color: (
+															default: #5c5e81,
+															open: $primary,
+															here: $primary,
+															active: $primary,
+															hover: $primary
+														)
+													)
+												),
+												// Text
+												text: (
+													font-color:	(
+														default: #9899ac,
+														open: #ffffff,
+														active: #ffffff,
+														hover: #ffffff
+													),
+													font-size: 14px,
+													font-weight: $font-weight-bold
+
+												),
+												// Arrow
+												arrow:	(
+													font-color:	(
+														default: #5c5e81,
+														open: #ffffff,
+														here: #ffffff,
+														active: #ffffff,
+														hover: #ffffff
+													)
+												)
+											)
+										),
+			
+										// Section
+										section: (
+											text: (
+												font-color: #4c4e6f
+											),
+											icon: (
+												font-color: #4c4e6f
+											)
+										),
+			
+										// Separator
+										separator: (
+											border: 1px solid #4c4e6f
+										)
+									)
+								),
+			
+								// Section
+								section: (
+									text: (
+										font-color: #4c4e6f
+									),
+			
+									icon: (
+										font-color: #4c4e6f
+									)
+								),
+			
+								// Separator
+								separator: (
+									border: 1px solid #4c4e6f
+								)
+							),
+			
+							// Minimize Mode
+							minimize: (
+								// root item
+								item: (
+									// Link
+									link: (
+										// self
+										self: (
+											bg-color: (
+												default: null,
+												open: null,
+												active: null,
+												hover: null
+											)
+										),
+			
+										// Icon
+										icon:	(
+											font-color:	(
+												default: #7c87a6,
+												open: $primary,
+												active: $primary,
+												hover: $primary
+											)
+										)
+									)
+								)
+							),
+			
+							// Dropdown Mode
+							dropdown: (
+								// Item
+								item: (
+									// Submenu
+									submenu: (
+										// Submenu
+										self: (
+											// submenu base styles
+											bg-color: #fff,
+											box-shadow: 0px 0px 50px 0px rgba(82,63,105,0.15),
+										),
+			
+										// Item
+										item: (
+											// Item
+											self: (
+												bg-color: (
+													default: null,
+													open: null,
+													here: null,
+													active: null,
+													hover: null
+												)
+											),
+			
+											// Link
+											link: (
+												// Link
+												self: (
+													bg-color: (
+														default: null,
+														open: $gray-100,
+														here: $gray-100,
+														active: $gray-100,
+														hover: $gray-100
+													)
+												),
+			
+												// Icon
+												icon:	(
+													font-color:	(
+														default: lighten(#8c8ea4, 10%),
+														open: $primary,
+														active: $primary,
+														hover: $primary
+													)
+												),
+			
+												// Bullet
+												bullet:	(
+													dot: (
+														bg-color: (
+															default: lighten(#8c8ea4, 10%),
+															open: $primary,
+															here: $primary,
+															active: $primary,
+															hover: $primary
+														)
+													),
+			
+													line: (
+														bg-color: (
+															default: lighten(#8c8ea4, 10%),
+															open: $primary,
+															here: $primary,
+															active: $primary,
+															hover: $primary
+														)
+													)
+												),
+			
+												// Text
+												text: (
+													font-color:	(
+														default: darken(#868aa8, 10%),
+														open: $primary,
+														active: $primary,
+														hover: $primary
+													)
+												),
+			
+												// Arrow
+												arrow:	(
+													font-color:	(
+														default: lighten(#8c8ea4, 10%),
+														open: $primary,
+														active: $primary,
+														hover: $primary
+													)
+												)
+											)
+										),
+			
+										// Section
+										section: (
+											text: (
+												font-color: lighten(#868aa8, 10%)
+											),
+			
+											icon: (
+												font-color: lighten(#868aa8, 12%)
+											)
+										),
+			
+										// Separator
+										separator: (
+											border: 1px solid rgba(#000000, 0.07)
+										)
+									)
+								)
+							)
+						)
+
+
+
 		)
 	)
 ) !default;

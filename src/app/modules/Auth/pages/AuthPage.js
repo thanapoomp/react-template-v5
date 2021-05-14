@@ -9,7 +9,6 @@ import ForgotPassword from "./ForgotPassword";
 import "../../../../_metronic/_assets/sass/pages/login/classic/login-1.scss";
 import * as CONST from "../../../../Constants";
 
-
 export function AuthPage() {
   return (
     <>
@@ -24,6 +23,8 @@ export function AuthPage() {
             className="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10"
             style={{
               backgroundImage: `url(${toAbsoluteUrl("/media/bg/bg-4.jpg")})`,
+              //backgroundColor: "#4C65A4",
+              //width: "1500px",
             }}
           >
             {/*begin: Aside Container*/}
@@ -33,7 +34,7 @@ export function AuthPage() {
                 <img
                   alt="Logo"
                   className="max-h-70px"
-                  src={toAbsoluteUrl("/media/logos/logo-letter-1.png")}
+                  src={toAbsoluteUrl("/media/logos/smile-logo.png")}
                 />
               </Link>
               {/* end:: Aside header */}

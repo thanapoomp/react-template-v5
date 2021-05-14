@@ -7,7 +7,7 @@ import objectPath from "object-path";
 import { useHtmlClassService } from "../../_core/MetronicLayout";
 import { UserProfileDropdown } from "./dropdowns/UserProfileDropdown";
 export function QuickUserToggler() {
-  const  authReducer  = useSelector(({auth}) => auth)
+  const authReducer = useSelector(({ auth }) => auth);
   const uiService = useHtmlClassService();
   const layoutProps = useMemo(() => {
     return {
@@ -31,7 +31,7 @@ export function QuickUserToggler() {
               <>
                 {/* Toolbar */}
                 <span className="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
-                  Hi,
+                  สวัสดี ,
                 </span>
                 <span className="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">
                   {authReducer.user}

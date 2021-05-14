@@ -129,12 +129,12 @@ export function getInitLayoutConfig() {
         minimize: {
           toggle: true, // allow toggle
           default: false, // default state
-          hoverable: true, // allow hover
+          hoverable: false, // allow hover
         },
       },
       footer: {
         self: {
-          display: true,
+          display: false,
         },
       },
       menu: {
