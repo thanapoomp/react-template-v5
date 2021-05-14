@@ -50,6 +50,14 @@ function FormDemo() {
 
       <Button color="primary"
         onClick={() => {
+          history.push("/demo/formWithDropdown");
+        }}
+      >
+        Dropdown
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
           history.push("/demo/formWithTextField");
         }}
       >
