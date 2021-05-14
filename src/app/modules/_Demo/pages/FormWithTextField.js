@@ -6,7 +6,7 @@ import { Grid, Button } from "@material-ui/core/";
 import FormikTextField from "../../Common/components/CustomFormik/FormikTextField";
 import { useHistory } from "react-router";
 
-function WithTextField() {
+function FormWithTextField() {
   const history = useHistory();
   const [state] = React.useState({
     firstName: "Hello I am first name",
@@ -30,6 +30,7 @@ function WithTextField() {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      formik.setSubmitting(false);
     },
   });
 
@@ -52,7 +53,7 @@ function WithTextField() {
         </Grid>
 
         <Grid item xs={12} lg={3}>
-          <Button type="submit" fullWidth color="primary" variant="contained">
+          <Button type="submit" disabled={formik.isSubmitting} fullWidth color="primary" variant="contained">
             Submit
           </Button>
         </Grid>
@@ -79,4 +80,4 @@ function WithTextField() {
   );
 }
 
-export default WithTextField;
+export default FormWithTextField;

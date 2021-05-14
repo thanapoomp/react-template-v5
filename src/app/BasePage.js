@@ -13,12 +13,9 @@ import UseFormikWithDropdownCascade from './modules/_FormikUseFormik/pages/WithD
 import WithAllComponents from "./modules/_FormikUseFormik/pages/WithAllComponents";
 import FormDemo from "./modules/_Demo/pages/FormDemo";
 import FormWithTextField from './modules/_Demo/pages/FormWithTextField'
+import FormWithAutoComplete from "./modules/_Demo/pages/FormWithAutoComplete";
 
 export default function BasePage(props) {
-  // useEffect(() => {
-  //   console.log('Base page');
-  // }, []) // [] - is required if you need only one call
-  // https://reactjs.org/docs/hooks-reference.html#useeffect
 
   return (
     <Suspense fallback={<LayoutSplashScreen />}>
@@ -35,6 +32,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/useFormik/all" component={WithAllComponents} />
         <ContentRoute exact path="/demo/formDemo" component={FormDemo}/>
         <ContentRoute exact path="/demo/formWithTextField" component={FormWithTextField}/>
+        <ContentRoute exact path="/demo/formWithAutoComplete" component={FormWithAutoComplete}/>
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route
