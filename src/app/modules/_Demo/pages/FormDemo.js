@@ -42,6 +42,14 @@ function FormDemo() {
 
       <Button color="primary"
         onClick={() => {
+          history.push("/demo/formWithDateTimePicker");
+        }}
+      >
+        DateTimePicker
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
           history.push("/demo/formWithTextField");
         }}
       >

@@ -43,6 +43,7 @@ FormikDateTimePicker.propTypes = {
   disabled: PropTypes.bool,
   disableFuture: PropTypes.bool,
   disablePast: PropTypes.bool,
+  autoOk: PropTypes.bool
 };
 
 // Same approach for defaultProps too
@@ -53,6 +54,7 @@ FormikDateTimePicker.defaultProps = {
   disabled: false,
   disableFuture: false,
   disablePast: false,
+  autoOk: true
 };
 
 export default FormikDateTimePicker;
