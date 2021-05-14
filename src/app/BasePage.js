@@ -11,6 +11,8 @@ import ReduxDemo from './modules/_Demo/pages/ReduxDemo'
 import UseFormikWithTextField from './modules/_FormikUseFormik/pages/WithTextField'
 import UseFormikWithDropdownCascade from './modules/_FormikUseFormik/pages/WithDropdownCascade'
 import WithAllComponents from "./modules/_FormikUseFormik/pages/WithAllComponents";
+import FormDemo from "./modules/_Demo/pages/FormDemo";
+import FormWithTextField from './modules/_Demo/pages/FormWithTextField'
 
 export default function BasePage(props) {
   // useEffect(() => {
@@ -31,6 +33,8 @@ export default function BasePage(props) {
         <ContentRoute exact path="/useFormik/textfield" component={UseFormikWithTextField} />
         <ContentRoute exact path="/useFormik/dropdown" component={UseFormikWithDropdownCascade} />
         <ContentRoute exact path="/useFormik/all" component={WithAllComponents} />
+        <ContentRoute exact path="/demo/formDemo" component={FormDemo}/>
+        <ContentRoute exact path="/demo/formWithTextField" component={FormWithTextField}/>
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route
