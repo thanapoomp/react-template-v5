@@ -208,6 +208,26 @@ export function AsideMenuList({ layoutProps }) {
           <h4 className="menu-text">UseFormik</h4>
           <i className="menu-icon flaticon-more-v2"></i>
         </li>
+        {/* begin::section */}
+        <li className="menu-section ">
+          <h4 className="menu-text">FormDemo</h4>
+          <i className="menu-icon flaticon-more-v2"></i>
+        </li>
+
+        {/* end:: section */}
+        {/*begin::1 newEmployee*/}
+        <li
+          className={`menu-item ${getMenuItemActive("/demo/formDemo", false)}`}
+          aria-haspopup="true"
+        >
+          <NavLink className="menu-link" to="/demo/formDemo">
+            <span className="svg-icon menu-icon">
+              <Icon>star</Icon>
+            </span>
+            <span className="menu-text">FormDemo</span>
+          </NavLink>
+        </li>
+        {/*End::1 newEmployee*/}
 
         {/* end:: section */}
         {/*begin::1 newEmployee*/}

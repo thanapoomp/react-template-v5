@@ -16,6 +16,7 @@ function FormikTextField(props) {
       name={props.name}
       label={props.label}
       fullWidth
+      required={props.required}
       onBlur={props.formik.handleBlur}
       onChange={props.formik.handleChange}
       value={props.formik.values[`${props.name}`]}
@@ -37,7 +38,8 @@ FormikTextField.propTypes = {
   formik: PropTypes.object,
   name: PropTypes.string,
   label: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  required: PropTypes.bool
 };
 
 // Same approach for defaultProps too
@@ -45,7 +47,8 @@ FormikTextField.defaultProps = {
   formik: {},
   name: "Do not forget to set name",
   label: "Do not forget to set label",
-  disabled: false
+  disabled: false,
+  required: false
 };
 
 export default FormikTextField;
