@@ -31,6 +31,14 @@ function FormDemo() {
       >
         Checkbox
       </Button>
+
+      <Button
+        onClick={() => {
+          history.push("/demo/formWithCheckboxGroup");
+        }}
+      >
+        CheckboxGroup
+      </Button>
     </div>
   );
 }

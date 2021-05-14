@@ -27,6 +27,7 @@ function FormikCheckBoxGroup(props) {
                 key={`${props.name}_${item[`${props.valueFieldName}`]}`}
                 control={
                   <Checkbox
+                    color={props.color}
                     checked={props.formik.values[props.name].includes(
                       item[`${props.valueFieldName}`]
                     )}
@@ -67,6 +68,7 @@ FormikCheckBoxGroup.propTypes = {
   valueFieldName: PropTypes.string,
   displayFieldName: PropTypes.string,
   disabled: PropTypes.bool,
+  color: PropTypes.string,
 };
 
 FormikCheckBoxGroup.defaultProps = {
@@ -77,6 +79,7 @@ FormikCheckBoxGroup.defaultProps = {
   valueFieldName: "id",
   displayFieldName: "name",
   disabled: false,
+  color: 'primary',
 };
 
 export default FormikCheckBoxGroup;
