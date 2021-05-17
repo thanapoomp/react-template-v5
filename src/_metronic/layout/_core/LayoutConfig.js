@@ -62,7 +62,7 @@ export function getInitLayoutConfig() {
     },
     // == Page Splash Screen loading
     loader: {
-      enabled: true,
+      enabled: false,
       type: "", // default|spinner-message|spinner-logo
       logo: toAbsoluteUrl("/media/logos/logo-dark-sm.png"),
       message: "Please wait...",
