@@ -66,6 +66,22 @@ function FormDemo() {
 
       <Button color="primary"
         onClick={() => {
+          history.push("/demo/formWithRadioGroup");
+        }}
+      >
+        Radio Group
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
+          history.push("/demo/formWithRating");
+        }}
+      >
+        Rating
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
           history.push("/demo/formWithTextField");
         }}
       >
