@@ -11,6 +11,7 @@ import FormLabel from "@material-ui/core/FormLabel";
 function FormikRadioGroup(props) {
   return (
     <FormControl
+      fullWidth
       component="fieldset"
       error={
         props.formik.errors[`${props.name}`] &&

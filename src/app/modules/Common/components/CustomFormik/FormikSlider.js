@@ -2,9 +2,10 @@
 /* eslint-disable no-restricted-imports */
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
-
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
 function FormikSlider(props) {
   const [marks, setMarks] = React.useState([
     {
@@ -15,42 +16,55 @@ function FormikSlider(props) {
 
   React.useEffect(() => {
     if (props.max) {
-        let marksToSet = []
-        marksToSet.push({value: props.min, label: props.min.toString()})
+      let marksToSet = [];
+      marksToSet.push({ value: props.min, label: props.min.toString() });
 
-        let half = props.max / 2;
-        if (Number.isInteger(half)) {
-            marksToSet.push({value: half, label: half.toString()})
-        }
+      let half = props.max / 2;
+      if (Number.isInteger(half)) {
+        marksToSet.push({ value: half, label: half.toString() });
+      }
 
-        marksToSet.push({value: props.max, label: props.max.toString()})
+      marksToSet.push({ value: props.max, label: props.max.toString() });
 
-        setMarks(marksToSet);
+      setMarks(marksToSet);
     }
   }, []);
 
   return (
     <>
-      <Typography id="discrete-slider" gutterBottom>
-        {props.label}
-      </Typography>
-      <Slider
-        name={props.name}
-        onBlur={() => {
-          props.formik.setFieldTouched([`${props.name}`], true, true) 
-        }}
-        onChange={(event, value) => {
-          props.formik.setFieldValue(props.name, value);
-        }}
-        value={props.formik.values[`${props.name}`]}
-        aria-labelledby="discrete-slider"
-        valueLabelDisplay="on"
-        step={props.step}
-        marks={marks}
-        min={props.min}
-        max={props.max}
-        disabled={props.disabled}
-      />
+      <FormControl
+        fullWidth
+        component="fieldset"
+        error={
+          props.formik.errors[`${props.name}`] &&
+          props.formik.touched[`${props.name}`]
+        }
+      >
+        <FormLabel component="legend">{props.label}</FormLabel>
+        <Slider
+          name={props.name}
+          onBlur={() => {
+            props.formik.setFieldTouched([`${props.name}`], true, true);
+          }}
+          onChange={(event, value) => {
+            props.formik.setFieldValue(props.name, value);
+          }}
+          value={props.formik.values[`${props.name}`]}
+          aria-labelledby="discrete-slider"
+          valueLabelDisplay="on"
+          step={props.step}
+          marks={marks}
+          min={props.min}
+          max={props.max}
+          disabled={props.disabled}
+        />
+        {props.formik.errors[`${props.name}`] &&
+          props.formik.touched[`${props.name}`] && (
+            <FormHelperText>
+              {props.formik.errors[`${props.name}`]}
+            </FormHelperText>
+          )}
+      </FormControl>
     </>
   );
 }

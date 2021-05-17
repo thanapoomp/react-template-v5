@@ -11,6 +11,7 @@ function FormikCheckBox(props) {
   return (
     <FormControl
       required
+      fullWidth
       error={
         props.formik.errors[`${props.name}`] &&
         props.formik.touched[`${props.name}`]

@@ -82,6 +82,14 @@ function FormDemo() {
 
       <Button color="primary"
         onClick={() => {
+          history.push("/demo/formWithSlider");
+        }}
+      >
+        Slider
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
           history.push("/demo/formWithTextField");
         }}
       >

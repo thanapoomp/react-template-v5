@@ -6,6 +6,7 @@ import { Grid, Button } from "@material-ui/core/";
 import FormikDropdown from "../../Common/components/CustomFormik/FormikDropdown";
 import * as CONST from "../../../../Constants";
 import Axios from "axios";
+import { useHistory } from "react-router";
 
 function FormWithDropdownCascade(props) {
     const api_get_provoince_url = `${CONST.API_URL}/Workshop/province`;
@@ -15,6 +16,8 @@ function FormWithDropdownCascade(props) {
     const [provinceList, setProvinceList] = React.useState([]);
     const [districtList, setDistrictList] = React.useState([]);
     const [subDistrictList, setSubDistrictList] = React.useState([]);
+
+    const history = useHistory();
   
     const formik = useFormik({
       enableReinitialize: true,
@@ -92,9 +95,9 @@ function FormWithDropdownCascade(props) {
   
     return (
       <form onSubmit={formik.handleSubmit}>
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           {/* Province */}
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={12} lg={2}>
             <FormikDropdown
               formik={formik}
               name="provinceId"
@@ -112,7 +115,7 @@ function FormWithDropdownCascade(props) {
           </Grid>
   
           {/* District */}
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={12} lg={2}>
             <FormikDropdown
               formik={formik}
               name="districtId"
@@ -128,7 +131,7 @@ function FormWithDropdownCascade(props) {
           </Grid>
   
           {/* SubDistrict */}
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={12} lg={2}>
             <FormikDropdown
               formik={formik}
               name="subDistrictId"
@@ -141,10 +144,22 @@ function FormWithDropdownCascade(props) {
           </Grid>
   
           <Grid item xs={12} lg={3}>
-            <Button type="submit" fullWidth variant="contained">
+            <Button color="primary" type="submit" fullWidth variant="contained">
               Submit
             </Button>
           </Grid>
+
+          <Grid item xs={12} lg={3}>
+          <Button
+            fullWidth
+            onClick={() => {
+              history.push("/demo/formDemo");
+            }}
+            variant="contained"
+          >
+            Back
+          </Button>
+        </Grid>
         </Grid>
         <br></br>
         values: {JSON.stringify(formik.values)}

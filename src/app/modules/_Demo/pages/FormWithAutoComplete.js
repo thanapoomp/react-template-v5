@@ -4,21 +4,29 @@ import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
 import { useHistory } from "react-router";
-import FormikAutoComplete from '../../Common/components/CustomFormik/FormikAutoComplete'
+import FormikAutoComplete from "../../Common/components/CustomFormik/FormikAutoComplete";
 import * as demoAxios from "../_redux/demoAxios";
 
 function FormWithAutoComplete() {
   const history = useHistory();
   const [state, setState] = React.useState({
-    relatedEmployee: { id: "", firstName: "" },
+    relatedEmployee: null,
   });
 
   const loadEmployee = (firstName) => {
-    return demoAxios.getEmployeeFilter('firstName',true,1,50,'',firstName,'')
-  }
+    return demoAxios.getEmployeeFilter(
+      "firstName",
+      true,
+      1,
+      50,
+      "",
+      firstName,
+      ""
+    );
+  };
 
   React.useEffect(() => {
-    // getRelatedEmployee
+    // ตัวอย่าง สำหรับ load ข้อมูลเพื่อ show 
     let id = "e1b57a9c-23e3-409f-1c6a-08d8bcedf819";
     demoAxios
       .getEmployee(id)
@@ -29,7 +37,6 @@ function FormWithAutoComplete() {
             ...state,
             relatedEmployee: relatedEmployeeToSet,
           });
-          debugger;
         } else alert(res.data.message);
       })
       .catch((err) => {
@@ -41,13 +48,12 @@ function FormWithAutoComplete() {
     enableReinitialize: true,
     validate: (values) => {
       const errors = {};
-    
-      if (!values.relatedEmployee.id) {
-          errors.relatedEmployee = 'Required'
+
+      if (!values.relatedEmployee) {
+        errors.relatedEmployee = "Required";
       }
 
       return errors;
-
     },
     initialValues: {
       relatedEmployee: state.relatedEmployee,
@@ -64,19 +70,24 @@ function FormWithAutoComplete() {
         {/* relatedEmployee */}
         <Grid item xs={12} lg={3}>
           <FormikAutoComplete
-          formik={formik}
-          name="relatedEmployee"
-          label="Related"
-          axiosGet={loadEmployee.bind(this)}
-          valueFieldName="id"
-          displayFieldName="firstName"
-          minSearchLen={3}
+            formik={formik}
+            name="relatedEmployee"
+            label="Related"
+            axiosGet={loadEmployee.bind(this)}
+            valueFieldName="id"
+            displayFieldName="firstName"
+            minSearchLen={3}
           />
         </Grid>
 
-
         <Grid item xs={12} lg={3}>
-          <Button disabled={formik.isSubmitting} type="submit" fullWidth color="primary" variant="contained">
+          <Button
+            disabled={formik.isSubmitting}
+            type="submit"
+            fullWidth
+            color="primary"
+            variant="contained"
+          >
             Submit
           </Button>
         </Grid>

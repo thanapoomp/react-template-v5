@@ -9,6 +9,7 @@ import FormLabel from "@material-ui/core/FormLabel";
 function FormikRating(props) {
   return (
     <FormControl
+      fullWidth
       component="fieldset"
       error={
         props.formik.errors[`${props.name}`] &&

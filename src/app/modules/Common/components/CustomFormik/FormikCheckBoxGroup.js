@@ -11,6 +11,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 function FormikCheckBoxGroup(props) {
   return (
       <FormControl
+        fullWidth
         error={
           props.formik.errors[`${props.name}`] &&
           props.formik.touched[`${props.name}`]

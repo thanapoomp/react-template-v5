@@ -11,6 +11,8 @@ function FormikAutoComplete(props) {
   const [options, setOptions] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [searchText, setSearchText] = React.useState("");
+  const [isError, setIsError] = React.useState(false)
+
 
   React.useEffect(() => {
     if (searchText.length >= props.minSearchLen) {
@@ -42,6 +44,14 @@ function FormikAutoComplete(props) {
     setLoading(false);
   }, [options]);
 
+  React.useEffect(() => {
+    if (props.formik.errors[`${props.name}`]) {
+      setIsError(true)
+    }else {
+      setIsError(false)
+    }
+  }, [props.formik.errors[`${props.name}`]])
+
   return (
     <Autocomplete
       open={open}
@@ -63,10 +73,11 @@ function FormikAutoComplete(props) {
             [props.displayFieldName]: value[props.displayFieldName],
           });
         } else {
-          props.formik.setFieldValue(props.name, {
-            [props.valueFieldName]: null,
-            [props.displayFieldName]: null,
-          });
+          // props.formik.setFieldValue(props.name, {
+          //   [props.valueFieldName]: null,
+          //   [props.displayFieldName]: null,
+          // });
+          props.formik.setFieldValue(props.name, null);
         }
       }}
       options={options}
@@ -82,16 +93,8 @@ function FormikAutoComplete(props) {
           name={props.name}
           disabled={props.disabled}
           fullWidth
-          helperText={
-            props.formik.errors[`${props.name}`] &&
-            props.formik.touched[`${props.name}`]
-              ? props.formik.touched[`${props.name}`]
-              : ""
-          }
-          error={
-            props.formik.errors[`${props.name}`] &&
-            props.formik.touched[`${props.name}`]
-          }
+          helperText={isError ? props.formik.errors[`${props.name}`]: ""}
+          error={isError}
           onBlur={() => {
             props.formik.setFieldTouched([`${props.name}`], true, true);
           }}

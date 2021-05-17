@@ -22,6 +22,7 @@ import FormWithDropdown from "./modules/_Demo/pages/FormWithDropdown";
 import FormWithDropdownCascade from "./modules/_Demo/pages/FormWithDropdownCascade";
 import FormWithRadioGroup from "./modules/_Demo/pages/FormWithRadioGroup";
 import FormWithRating from "./modules/_Demo/pages/FormWithRating";
+import FormWithSlider from "./modules/_Demo/pages/FormWithSlider";
 
 export default function BasePage(props) {
 
@@ -49,6 +50,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithDropdownCascade" component={FormWithDropdownCascade}/>
         <ContentRoute exact path="/demo/formWithRadioGroup" component={FormWithRadioGroup}/>
         <ContentRoute exact path="/demo/formWithRating" component={FormWithRating}/>
+        <ContentRoute exact path="/demo/formWithSlider" component={FormWithSlider}/>
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route
