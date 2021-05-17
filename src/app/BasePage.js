@@ -20,6 +20,8 @@ import FormWithDatePicker from "./modules/_Demo/pages/FormWithDatePicker";
 import FormWithDateTimePicker from "./modules/_Demo/pages/FormWithDateTimePicker";
 import FormWithDropdown from "./modules/_Demo/pages/FormWithDropdown";
 import FormWithDropdownCascade from "./modules/_Demo/pages/FormWithDropdownCascade";
+import FormWithRadioGroup from "./modules/_Demo/pages/FormWithRadioGroup";
+import FormWithRating from "./modules/_Demo/pages/FormWithRating";
 
 export default function BasePage(props) {
 
@@ -45,6 +47,8 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithDateTimePicker" component={FormWithDateTimePicker}/>
         <ContentRoute exact path="/demo/formWithDropdown" component={FormWithDropdown}/>
         <ContentRoute exact path="/demo/formWithDropdownCascade" component={FormWithDropdownCascade}/>
+        <ContentRoute exact path="/demo/formWithRadioGroup" component={FormWithRadioGroup}/>
+        <ContentRoute exact path="/demo/formWithRating" component={FormWithRating}/>
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route
