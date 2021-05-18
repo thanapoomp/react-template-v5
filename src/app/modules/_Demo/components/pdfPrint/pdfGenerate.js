@@ -3,6 +3,7 @@
 //ลิ้งตัวอย่าง: http://pdfmake.org/playground.html
 
 import pdfMake from "pdfmake/build/pdfmake";
+import { logo64 } from './image'
 pdfMake.fonts = {
 	Sarabun: {
 		normal: `https://cdn.jsdelivr.net/npm/font-th-sarabun-new@1.0.0/fonts/THSarabunNew-webfont.ttf`,
@@ -15,7 +16,11 @@ pdfMake.fonts = {
 export const printPDF = (data) => {
 	var docDefinition = {
 		content: [
-
+			{
+				image: 'logo',
+				width: 50,
+				alignment: "center",
+			},
 			{
 				text: "ตารางความคุ้มครอง",
 				alignment: "center",
@@ -269,6 +274,9 @@ export const printPDF = (data) => {
 		pageOrientation: "portrait",
 		// margin: [left, top, right, bottom]
 		pageMargins: [30, 20, 40, 80],
+		images: {
+			logo: logo64,
+		},
 	};
 	pdfMake.createPdf(docDefinition).open();
 };
