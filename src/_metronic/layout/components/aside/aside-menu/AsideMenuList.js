@@ -183,19 +183,32 @@ export function AsideMenuList({ layoutProps }) {
             </NavLink>
           </li>
 
-        {/*begin::1 Form Demo*/}
-        <li
-          className={`menu-item ${getMenuItemActive("/demo/formDemo", false)}`}
-          aria-haspopup="true"
-        >
-          <NavLink className="menu-link" to="/demo/formDemo">
-            <span className="svg-icon menu-icon">
-              <Icon>star</Icon>
-            </span>
-            <span className="menu-text">FormDemo</span>
-          </NavLink>
-        </li>
-        {/*End::1 Form Demo*/}
+          {/*begin::1 Form Demo*/}
+          <li
+            className={`menu-item ${getMenuItemActive("/demo/formDemo", false)}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/formDemo">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">FormDemo</span>
+            </NavLink>
+          </li>
+          {/*End::1 Form Demo*/}
+          {/* begin::1 pdfGenerrate */}
+          <li
+            className={`menu-item ${getMenuItemActive("/demo/pdfGenerrate", false)}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/pdfGenerrate">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">PDF Generrate</span>
+            </NavLink>
+          </li>
+          {/* End::1 pdfGenerrate */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>
