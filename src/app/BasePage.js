@@ -25,6 +25,7 @@ import FormWithTimePicker from "./modules/_Demo/pages/formComponents/FormWithTim
 import pdfGenerrate from "./modules/_Demo/pages/PdfGenerateDemo";
 import QRGenerateDemo from "./modules/_Demo/pages/QRGenerateDemo";
 import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
+import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 
 export default function BasePage(props) {
 
@@ -52,6 +53,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithSwitch" component={FormWithSwitch} />
         <ContentRoute exact path="/demo/formWithTextMaskCardId" component={FormWithTextMaskCardId} />
         <ContentRoute exact path="/demo/formWithTextField" component={FormWithTextField} />
+        <ContentRoute exact path="/demo/formWithTextNumber" component={FormWithTextNumber} />
         <ContentRoute exact path="/demo/formWithTimePicker" component={FormWithTimePicker} />
         <ContentRoute exact path="/demo/pdfGenerrate" component={pdfGenerrate} />
         <ContentRoute exact path="/demo/QRGenerateDemo" component={QRGenerateDemo} />

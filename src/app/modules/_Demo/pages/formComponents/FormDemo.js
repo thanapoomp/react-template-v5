@@ -114,10 +114,18 @@ function FormDemo() {
 
       <Button color="primary"
         onClick={() => {
+          history.push("/demo/formWithTextNumber");
+        }}
+      >
+        TextNumber
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
           history.push("/demo/formWithTextMaskCardId");
         }}
       >
-        Text mask Card Id
+        TextMaskCardId
       </Button>
 
       TODO: 
