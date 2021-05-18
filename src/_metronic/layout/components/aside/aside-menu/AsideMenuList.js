@@ -205,10 +205,23 @@ export function AsideMenuList({ layoutProps }) {
               <span className="svg-icon menu-icon">
                 <Icon>star</Icon>
               </span>
-              <span className="menu-text">PDF Generrate</span>
+              <span className="menu-text">PDF GenerrateDemo</span>
             </NavLink>
           </li>
           {/* End::1 pdfGenerrate */}
+          {/* begin::1 QRGenerateDemo */}
+          <li
+            className={`menu-item ${getMenuItemActive("/demo/QRGenerateDemo", false)}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/QRGenerateDemo">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">QR GenerateDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 QRGenerateDemo */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>

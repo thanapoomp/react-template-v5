@@ -23,6 +23,7 @@ import FormWithSlider from "./modules/_Demo/pages/formComponents/FormWithSlider"
 import FormWithSwitch from "./modules/_Demo/pages/formComponents/FormWithSwitch";
 import FormWithTimePicker from "./modules/_Demo/pages/formComponents/FormWithTimePicker";
 import pdfGenerrate from "./modules/_Demo/pages/PdfGenerateDemo";
+import QRGenerateDemo from "./modules/_Demo/pages/QRGenerateDemo";
 
 export default function BasePage(props) {
 
@@ -51,6 +52,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithSwitch" component={FormWithSwitch} />
         <ContentRoute exact path="/demo/formWithTimePicker" component={FormWithTimePicker} />
         <ContentRoute exact path="/demo/pdfGenerrate" component={pdfGenerrate} />
+        <ContentRoute exact path="/demo/QRGenerateDemo" component={QRGenerateDemo} />
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route
