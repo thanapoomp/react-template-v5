@@ -12,33 +12,35 @@ function QRGenerateDemo() {
 	var QRCode = require('qrcode.react');
 
 	return (
-		<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
-			<Link href="https://github.com/zpao/qrcode.react" color="textSecondary" target="_blank" rel="noopener">
-				pdfmake
+		<>
+			<QRCode
+				value={"https://www.siamsmile.co.th/"}
+				size={200}
+				bgColor={"#ffffff"}
+				fgColor={"#000000"}
+				level={"L"}
+				includeMargin={false}
+				renderAs={"svg"}
+				imageSettings={{
+					src: "https://image.makewebeasy.net/makeweb/0/NMOB3ab6S/Home/logo.png",
+					x: null,
+					y: null,
+					height: 25,
+					width: 25,
+					excavate: true,
+				}}
+			/>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+				<Link href="https://github.com/zpao/qrcode.react" color="textSecondary" target="_blank" rel="noopener">
+					pdfmake
 			</Link>
-		</Grid>,
-		<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
-			<Link href="https://zpao.github.io/qrcode.react/" color="textSecondary" target="_blank" rel="noopener">
-				ลิ้งตัวอย่าง
+			</Grid>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+				<Link href="https://zpao.github.io/qrcode.react/" color="textSecondary" target="_blank" rel="noopener">
+					ลิ้งตัวอย่าง
 			</Link>
-		</Grid>,
-		<QRCode
-			value={"https://www.siamsmile.co.th/"}
-			size={200}
-			bgColor={"#ffffff"}
-			fgColor={"#000000"}
-			level={"L"}
-			includeMargin={false}
-			renderAs={"svg"}
-			imageSettings={{
-				src: "https://image.makewebeasy.net/makeweb/0/NMOB3ab6S/Home/logo.png",
-				x: null,
-				y: null,
-				height: 25,
-				width: 25,
-				excavate: true,
-			}}
-		/>
+			</Grid>
+		</>
 	)
 }
 
