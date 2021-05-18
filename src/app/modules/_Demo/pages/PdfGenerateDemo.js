@@ -25,7 +25,7 @@ function PdfGenerateDemo() {
 					aria-label="add"
 					onClick={handleDownloadPDF}
 				>
-					ดาวน์โหลดตารางความคุ้มครอง
+					PDE DEMO
             <Icon>download</Icon>
 				</Fab>
 			</Grid>
