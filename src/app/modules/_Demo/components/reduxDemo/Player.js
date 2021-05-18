@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Switch from '@material-ui/core/Switch';
 import { useSelector, useDispatch } from 'react-redux'
-import * as demoRedux from '../_redux/demoRedux'
+import * as demoRedux from '../../_redux/demoRedux'
 import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles({

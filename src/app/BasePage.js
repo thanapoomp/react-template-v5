@@ -5,7 +5,7 @@ import PrivateRoute from "./modules/Auth/components/PrivateRoute";
 import ErrorUnAuthorized from "./modules/Auth/pages/ErrorUnAuthorized";
 import TokenHandler from "./modules/Auth/components/TokenHandler";
 import { ROLES } from "../Constants";
-import Alert from "./modules/_Demo/Alert";
+import AlertDemo from "./modules/_Demo/pages/AlertDemo";
 import Test from  './pages/Test'
 import ReduxDemo from './modules/_Demo/pages/ReduxDemo'
 import FormDemo from "./modules/_Demo/pages/formComponents/FormDemo";
@@ -32,7 +32,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/test" component={Test} />
 
         {/* Start Demo part สามารถ comment ได้ */}
-        <ContentRoute exact path="/alert" component={Alert} />
+        <ContentRoute exact path="/alert" component={AlertDemo} />
         <ContentRoute exact path="/reduxDemo" component={ReduxDemo} />
         <PrivateRoute exact path="/test" roles={[ROLES.admin,ROLES.developer]} component={Test} />
         <ContentRoute exact path="/demo/formDemo" component={FormDemo}/>

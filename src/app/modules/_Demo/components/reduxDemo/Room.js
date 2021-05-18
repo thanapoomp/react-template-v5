@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import * as demoRedux from '../_redux/demoRedux'
+import * as demoRedux from '../../_redux/demoRedux'
 
 
 function Room() {

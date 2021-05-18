@@ -107,7 +107,7 @@ export function AsideMenuList({ layoutProps }) {
           >
             <NavLink className="menu-link menu-toggle" to="/google-material">
               <span className="svg-icon menu-icon">
-                <SVG src={toAbsoluteUrl("/media/svg/icons/Design/Cap-2.svg")} />
+                <Icon>star</Icon>
               </span>
               <span className="menu-text">Level 1</span>
               <i className="menu-arrow" />
@@ -182,15 +182,7 @@ export function AsideMenuList({ layoutProps }) {
               <span className="menu-text">ReduxDemo</span>
             </NavLink>
           </li>
-        </>
 
-        {/* begin::section */}
-        <li className="menu-section ">
-          <h4 className="menu-text">FormDemo</h4>
-          <i className="menu-icon flaticon-more-v2"></i>
-        </li>
-
-        {/* end:: section */}
         {/*begin::1 Form Demo*/}
         <li
           className={`menu-item ${getMenuItemActive("/demo/formDemo", false)}`}
@@ -204,6 +196,7 @@ export function AsideMenuList({ layoutProps }) {
           </NavLink>
         </li>
         {/*End::1 Form Demo*/}
+        </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>
       {/* end::Menu Nav */}

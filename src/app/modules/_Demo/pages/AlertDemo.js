@@ -5,13 +5,13 @@ import {
   swalInfo,
   swalError,
   swalSuccess,
-} from "../Common/components/SweetAlert";
+} from "../../Common/components/SweetAlert";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { Helmet } from "react-helmet";
-import * as CONST from "../../../Constants";
+import * as CONST from "../../../../Constants";
 
-function Alert() {
+function AlertDemo() {
   return (
     <Grid container direction="column" justify="center" alignItems="center">
       <Helmet>
@@ -84,4 +84,4 @@ function Alert() {
   );
 }
 
-export default Alert;
+export default AlertDemo;

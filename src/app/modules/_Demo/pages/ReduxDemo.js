@@ -1,7 +1,7 @@
 import React from 'react'
-import Player from '../components/Player'
-import Room from '../components/Room'
-import GameConfig from '../components/GameConfig'
+import Player from '../../_Demo/components/reduxDemo/Player'
+import Room from '../../_Demo/components/reduxDemo/Room'
+import GameConfig from '../../_Demo/components/reduxDemo/GameConfig'
 import {useSelector} from 'react-redux'
 
 function ReduxDemo() {

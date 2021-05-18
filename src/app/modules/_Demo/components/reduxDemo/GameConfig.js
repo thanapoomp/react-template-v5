@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {useSelector, useDispatch} from 'react-redux'
-import * as demoRedux from '../_redux/demoRedux'
+import * as demoRedux from '../../_redux/demoRedux'
 import Button from '@material-ui/core/Button'
 
 function GameConfig() {
