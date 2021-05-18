@@ -5,6 +5,7 @@ import Fab from '@material-ui/core/Fab';
 import LightBlue from "@material-ui/core/colors/lightBlue";
 import { printPDF } from '../components/pdfPrint/pdfGenerate'
 import Icon from "@material-ui/core/Icon";
+import Link from '@material-ui/core/Link';
 
 function PdfGenerateDemo() {
 
@@ -28,14 +29,14 @@ function PdfGenerateDemo() {
 			sum: 100000,
 			startCover: "01/05/2020",
 			endCover: "01/05/2021",
-		  },
+		},
 	})
 	const handleDownloadPDF = () => {
 		printPDF(state.policyDetail);
 	}
 	return (
 		<div>
-			<Grid item xs={12} md={3} lg={3} style={{ marginLeft: 10 }}>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
 				<Fab
 					style={{ backgroundColor: lightBlue, width: '100%' }}
 					variant="extended"
@@ -47,6 +48,18 @@ function PdfGenerateDemo() {
 					PDE DEMO
             <Icon>download</Icon>
 				</Fab>
+			</Grid>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+
+				<Link href="https://github.com/bpampuch/pdfmake" color="textSecondary" target="_blank" rel="noopener">
+					pdfmake
+				</Link>
+			</Grid>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+
+				<Link href="http://pdfmake.org/playground.html" color="textSecondary" target="_blank" rel="noopener">
+					ลิ้งตัวอย่าง
+				</Link>
 			</Grid>
 		</div>
 	)
