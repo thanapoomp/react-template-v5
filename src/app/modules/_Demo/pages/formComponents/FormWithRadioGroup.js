@@ -3,25 +3,34 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikRating from "../../Common/components/CustomFormik/FormikRating";
+import FormikRadioGroup from "../../../Common/components/CustomFormik/FormikRadioGroup";
 import { useHistory } from "react-router";
 
-function FormWithRating() {
+function FormWithRadioGroup() {
   const history = useHistory();
+  
+  // Radio Group จำเป็นต้องให้ values เป็น string (ข้อจำกัดของ HTML)
+  const [state] = React.useState({
+    gender: [
+        { id: "1", name: "Male" },
+        { id: "2", name: "Female" },
+        { id: "3", name: "Unknown" },
+    ]
+  });
 
   const formik = useFormik({
     enableReinitialize: true,
     validate: (values) => {
       const errors = {};
 
-      if (values.rating === 0) {
-        errors.rating = 'required'
-      }
+    if (values.genderId === '0') {
+      errors.genderId = 'Required'
+    }
 
       return errors;
     },
     initialValues: {
-      rating: 0,
+      genderId: "0"
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -32,19 +41,18 @@ function FormWithRating() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
-        {/* rating */}
-        <Grid item xs={12} lg={3}>
-          <FormikRating formik={formik} name="rating" label="Rating" />
+               {/* Gender */}
+               <Grid item xs={12} lg={3}>
+          <FormikRadioGroup
+            formik={formik}
+            name="genderId"
+            label="Gender"
+            data={state.gender}
+          />
         </Grid>
 
         <Grid item xs={12} lg={3}>
-          <Button
-            type="submit"
-            disabled={formik.isSubmitting}
-            fullWidth
-            color="primary"
-            variant="contained"
-          >
+          <Button type="submit" disabled={formik.isSubmitting} fullWidth color="primary" variant="contained">
             Submit
           </Button>
         </Grid>
@@ -71,4 +79,4 @@ function FormWithRating() {
   );
 }
 
-export default FormWithRating;
+export default FormWithRadioGroup;

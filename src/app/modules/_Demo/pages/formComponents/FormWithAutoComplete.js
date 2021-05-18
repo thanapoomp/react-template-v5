@@ -4,8 +4,8 @@ import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
 import { useHistory } from "react-router";
-import FormikAutoComplete from "../../Common/components/CustomFormik/FormikAutoComplete";
-import * as demoAxios from "../_redux/demoAxios";
+import FormikAutoComplete from "../../../Common/components/CustomFormik/FormikAutoComplete";
+import * as demoAxios from "../../_redux/demoAxios";
 
 function FormWithAutoComplete() {
   const history = useHistory();

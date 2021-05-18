@@ -3,25 +3,33 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikSlider from "../../Common/components/CustomFormik/FormikSlider";
+import FormikCheckBoxGroup from "../../../Common/components/CustomFormik/FormikCheckBoxGroup";
 import { useHistory } from "react-router";
 
-function FormWithSlider() {
+function FormWithCheckboxGroup() {
   const history = useHistory();
+  const [state] = React.useState({
+    hobbyList: [
+      { id: 1, name: "Games" },
+      { id: 2, name: "Shopping" },
+      { id: 3, name: "Jogging" },
+    ],
+    selectedHobbies:[1,2]
+  });
 
   const formik = useFormik({
     enableReinitialize: true,
     validate: (values) => {
       const errors = {};
 
-      if (values.score === 0) {
-        errors.score = 'required'
+      if (values.hobbies.length===0) {
+          errors.hobbies = 'Please choose at least 1 hobby'
       }
 
       return errors;
     },
     initialValues: {
-       score: -1,
+      hobbies: state.selectedHobbies
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -32,15 +40,13 @@ function FormWithSlider() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
-        {/* slider */}
+        {/* Hobby */}
         <Grid item xs={12} lg={6}>
-          <FormikSlider
+          <FormikCheckBoxGroup
             formik={formik}
-            name="score"
-            label="Score"
-            min={0}
-            max={20}
-            step={0.5}
+            name="hobbies"
+            label="Hobbies"
+            data={state.hobbyList}
           />
         </Grid>
 
@@ -78,4 +84,4 @@ function FormWithSlider() {
   );
 }
 
-export default FormWithSlider;
+export default FormWithCheckboxGroup;

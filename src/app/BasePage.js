@@ -8,20 +8,20 @@ import { ROLES } from "../Constants";
 import Alert from "./modules/_Demo/Alert";
 import Test from  './pages/Test'
 import ReduxDemo from './modules/_Demo/pages/ReduxDemo'
-import FormDemo from "./modules/_Demo/pages/FormDemo";
-import FormWithTextField from './modules/_Demo/pages/FormWithTextField'
-import FormWithAutoComplete from "./modules/_Demo/pages/FormWithAutoComplete";
-import FormWithCheckBox from './modules/_Demo/pages/FormWithCheckBox'
-import FormWithCheckboxGroup from "./modules/_Demo/pages/FormWithCheckboxGroup";
-import FormWithDatePicker from "./modules/_Demo/pages/FormWithDatePicker";
-import FormWithDateTimePicker from "./modules/_Demo/pages/FormWithDateTimePicker";
-import FormWithDropdown from "./modules/_Demo/pages/FormWithDropdown";
-import FormWithDropdownCascade from "./modules/_Demo/pages/FormWithDropdownCascade";
-import FormWithRadioGroup from "./modules/_Demo/pages/FormWithRadioGroup";
-import FormWithRating from "./modules/_Demo/pages/FormWithRating";
-import FormWithSlider from "./modules/_Demo/pages/FormWithSlider";
-import FormWithSwitch from "./modules/_Demo/pages/FormWithSwitch";
-import FormWithTimePicker from "./modules/_Demo/pages/FormWithTimePicker";
+import FormDemo from "./modules/_Demo/pages/formComponents/FormDemo";
+import FormWithTextField from './modules/_Demo/pages/formComponents/FormWithTextField'
+import FormWithAutoComplete from "./modules/_Demo/pages/formComponents/FormWithAutoComplete";
+import FormWithCheckBox from './modules/_Demo/pages/formComponents/FormWithCheckBox'
+import FormWithCheckboxGroup from "./modules/_Demo/pages/formComponents/FormWithCheckboxGroup";
+import FormWithDatePicker from "./modules/_Demo/pages/formComponents/FormWithDatePicker";
+import FormWithDateTimePicker from "./modules/_Demo/pages/formComponents/FormWithDateTimePicker";
+import FormWithDropdown from "./modules/_Demo/pages/formComponents/FormWithDropdown";
+import FormWithDropdownCascade from "./modules/_Demo/pages/formComponents/FormWithDropdownCascade";
+import FormWithRadioGroup from "./modules/_Demo/pages/formComponents/FormWithRadioGroup";
+import FormWithRating from "./modules/_Demo/pages/formComponents/FormWithRating";
+import FormWithSlider from "./modules/_Demo/pages/formComponents/FormWithSlider";
+import FormWithSwitch from "./modules/_Demo/pages/formComponents/FormWithSwitch";
+import FormWithTimePicker from "./modules/_Demo/pages/formComponents/FormWithTimePicker";
 
 export default function BasePage(props) {
 

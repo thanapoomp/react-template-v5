@@ -3,15 +3,22 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikCheckBox from "../../Common/components/CustomFormik/FormikCheckBox";
+import FormikTimePIcker from "../../../Common/components/CustomFormik/FormikTimePicker";
 import { useHistory } from "react-router";
 
-function FormWithCheckBox() {
+// import set นี้ เมื่อใช้ datepicker ทุกครั้ง
+// datepicker ในฝั่ง front จะอยู่ใน UTC FormattedDate ต้องแปลงเป็น Local ก่อนยิง API
+require("dayjs/locale/th");
+var utc = require("dayjs/plugin/utc");
+var dayjs = require("dayjs");
+dayjs.locale("th");
+dayjs.extend(utc);
+
+
+function FormWithTimePicker() {
   const history = useHistory();
   const [state] = React.useState({
-    isActive: true,
-    isAllow: false,
-    isAccept: false,
+    appointmentTime: dayjs().startOf('day')
   });
 
   const formik = useFormik({
@@ -19,18 +26,20 @@ function FormWithCheckBox() {
     validate: (values) => {
       const errors = {};
 
-      if (!values.isAccept) {
-        errors.isAccept = "Please accept!";
+      if (!values.appointmentTime) {
+        errors.appointmentTime = "Required";
       }
 
       return errors;
     },
     initialValues: {
-      isActive: state.isActive,
-      isAllow: state.isAllow,
-      isAccept: state.isAccept,
+      birthDate: state.birthDate,
+      appointmentTime: state.appointmentDate
     },
     onSubmit: (values) => {
+      //แปลงกลับให้เป็น Local DateTime
+      let appointmentTime = dayjs(values.appointmentDate).local().format();
+      values = {...values,appointmentDate: appointmentTime}
       alert(JSON.stringify(values, null, 2));
       formik.setSubmitting(false);
     },
@@ -39,19 +48,16 @@ function FormWithCheckBox() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
-        {/* isAllow */}
-        <Grid item xs={12} lg={2}>
-          <FormikCheckBox formik={formik} color="secondary" name="isActive" label="Active" />
-        </Grid>
 
-        {/* isAllow */}
-        <Grid item xs={12} lg={2}>
-          <FormikCheckBox formik={formik} name="isAllow" label="Allow" />
-        </Grid>
-
-        {/* isAllow */}
-        <Grid item xs={12} lg={2}>
-          <FormikCheckBox formik={formik} name="isAccept" label="Accept?" />
+        {/* Start appointmentDate */}
+        <Grid item xs={12} lg={3}>
+          <FormikTimePIcker
+            autoOk
+            disablePast
+            formik={formik}
+            name="appointmentTime"
+            label="AppointmentDate"
+          />
         </Grid>
 
         <Grid item xs={12} lg={3}>
@@ -88,4 +94,4 @@ function FormWithCheckBox() {
   );
 }
 
-export default FormWithCheckBox;
+export default FormWithTimePicker;

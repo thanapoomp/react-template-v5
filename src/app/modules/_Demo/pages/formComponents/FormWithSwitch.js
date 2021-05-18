@@ -3,33 +3,21 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikCheckBoxGroup from "../../Common/components/CustomFormik/FormikCheckBoxGroup";
+import FormikSwitch from "../../../Common/components/CustomFormik/FormikSwitch";
 import { useHistory } from "react-router";
 
-function FormWithCheckboxGroup() {
+function FormWithSwitch() {
   const history = useHistory();
-  const [state] = React.useState({
-    hobbyList: [
-      { id: 1, name: "Games" },
-      { id: 2, name: "Shopping" },
-      { id: 3, name: "Jogging" },
-    ],
-    selectedHobbies:[1,2]
-  });
 
   const formik = useFormik({
     enableReinitialize: true,
     validate: (values) => {
       const errors = {};
 
-      if (values.hobbies.length===0) {
-          errors.hobbies = 'Please choose at least 1 hobby'
-      }
-
       return errors;
     },
     initialValues: {
-      hobbies: state.selectedHobbies
+      isActive: false,
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -40,14 +28,9 @@ function FormWithCheckboxGroup() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
-        {/* Hobby */}
-        <Grid item xs={12} lg={6}>
-          <FormikCheckBoxGroup
-            formik={formik}
-            name="hobbies"
-            label="Hobbies"
-            data={state.hobbyList}
-          />
+        {/* isActive */}
+        <Grid item xs={12} lg={3}>
+          <FormikSwitch color='primary' formik={formik} name="isActive" label="Active" />
         </Grid>
 
         <Grid item xs={12} lg={3}>
@@ -84,4 +67,4 @@ function FormWithCheckboxGroup() {
   );
 }
 
-export default FormWithCheckboxGroup;
+export default FormWithSwitch;

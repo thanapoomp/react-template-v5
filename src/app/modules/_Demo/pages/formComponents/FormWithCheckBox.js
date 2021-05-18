@@ -3,14 +3,15 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikTextField from "../../Common/components/CustomFormik/FormikTextField";
+import FormikCheckBox from "../../../Common/components/CustomFormik/FormikCheckBox";
 import { useHistory } from "react-router";
 
-function FormWithTextField() {
+function FormWithCheckBox() {
   const history = useHistory();
   const [state] = React.useState({
-    firstName: "Hello I am first name",
-    lastName: "Hello I am last name",
+    isActive: true,
+    isAllow: false,
+    isAccept: false,
   });
 
   const formik = useFormik({
@@ -18,15 +19,16 @@ function FormWithTextField() {
     validate: (values) => {
       const errors = {};
 
-      if (!values.firstName) {
-        errors.firstName = "Required";
+      if (!values.isAccept) {
+        errors.isAccept = "Please accept!";
       }
 
       return errors;
     },
     initialValues: {
-      firstName: state.firstName,
-      lastName: state.lastName,
+      isActive: state.isActive,
+      isAllow: state.isAllow,
+      isAccept: state.isAccept,
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -37,23 +39,29 @@ function FormWithTextField() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
-        {/* Start firstName */}
-        <Grid item xs={12} lg={3}>
-          <FormikTextField
-            formik={formik}
-            name="firstName"
-            label="First Name"
-            required
-          />
+        {/* isAllow */}
+        <Grid item xs={12} lg={2}>
+          <FormikCheckBox formik={formik} color="secondary" name="isActive" label="Active" />
         </Grid>
 
-        {/* Start lastname */}
-        <Grid item xs={12} lg={3}>
-          <FormikTextField formik={formik} name="lastName" label="Last Name" />
+        {/* isAllow */}
+        <Grid item xs={12} lg={2}>
+          <FormikCheckBox formik={formik} name="isAllow" label="Allow" />
+        </Grid>
+
+        {/* isAllow */}
+        <Grid item xs={12} lg={2}>
+          <FormikCheckBox formik={formik} name="isAccept" label="Accept?" />
         </Grid>
 
         <Grid item xs={12} lg={3}>
-          <Button type="submit" disabled={formik.isSubmitting} fullWidth color="primary" variant="contained">
+          <Button
+            type="submit"
+            disabled={formik.isSubmitting}
+            fullWidth
+            color="primary"
+            variant="contained"
+          >
             Submit
           </Button>
         </Grid>
@@ -80,4 +88,4 @@ function FormWithTextField() {
   );
 }
 
-export default FormWithTextField;
+export default FormWithCheckBox;

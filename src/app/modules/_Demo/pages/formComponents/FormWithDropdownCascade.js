@@ -3,8 +3,8 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikDropdown from "../../Common/components/CustomFormik/FormikDropdown";
-import * as CONST from "../../../../Constants";
+import FormikDropdown from "../../../Common/components/CustomFormik/FormikDropdown";
+import * as CONST from "../../../../../Constants";
 import Axios from "axios";
 import { useHistory } from "react-router";
 

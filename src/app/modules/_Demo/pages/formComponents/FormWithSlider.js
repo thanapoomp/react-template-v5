@@ -3,34 +3,25 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikRadioGroup from "../../Common/components/CustomFormik/FormikRadioGroup";
+import FormikSlider from "../../../Common/components/CustomFormik/FormikSlider";
 import { useHistory } from "react-router";
 
-function FormWithRadioGroup() {
+function FormWithSlider() {
   const history = useHistory();
-  
-  // Radio Group จำเป็นต้องให้ values เป็น string (ข้อจำกัดของ HTML)
-  const [state] = React.useState({
-    gender: [
-        { id: "1", name: "Male" },
-        { id: "2", name: "Female" },
-        { id: "3", name: "Unknown" },
-    ]
-  });
 
   const formik = useFormik({
     enableReinitialize: true,
     validate: (values) => {
       const errors = {};
 
-    if (values.genderId === '0') {
-      errors.genderId = 'Required'
-    }
+      if (values.score === 0) {
+        errors.score = 'required'
+      }
 
       return errors;
     },
     initialValues: {
-      genderId: "0"
+       score: -1,
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -41,18 +32,26 @@ function FormWithRadioGroup() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
-               {/* Gender */}
-               <Grid item xs={12} lg={3}>
-          <FormikRadioGroup
+        {/* slider */}
+        <Grid item xs={12} lg={6}>
+          <FormikSlider
             formik={formik}
-            name="genderId"
-            label="Gender"
-            data={state.gender}
+            name="score"
+            label="Score"
+            min={0}
+            max={20}
+            step={0.5}
           />
         </Grid>
 
         <Grid item xs={12} lg={3}>
-          <Button type="submit" disabled={formik.isSubmitting} fullWidth color="primary" variant="contained">
+          <Button
+            type="submit"
+            disabled={formik.isSubmitting}
+            fullWidth
+            color="primary"
+            variant="contained"
+          >
             Submit
           </Button>
         </Grid>
@@ -79,4 +78,4 @@ function FormWithRadioGroup() {
   );
 }
 
-export default FormWithRadioGroup;
+export default FormWithSlider;
