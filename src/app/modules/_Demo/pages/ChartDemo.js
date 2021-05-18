@@ -4,6 +4,7 @@ import React from 'react'
 import Paper from '@material-ui/core/Paper';
 import Chart from "react-apexcharts";
 import { Grid } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
 
 function Apexchart() {
 
@@ -66,6 +67,18 @@ function Apexchart() {
 						width="100%"
 					/>
 				</Paper>
+			</Grid>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+
+				<Link href="https://apexcharts.com/" color="textSecondary" target="_blank" rel="noopener">
+					apexcharts
+				</Link>
+			</Grid>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+
+				<Link href="https://apexcharts.com/docs/react-charts/" color="textSecondary" target="_blank" rel="noopener">
+					ลิ้งตัวอย่าง
+				</Link>
 			</Grid>
 		</Grid>
 
