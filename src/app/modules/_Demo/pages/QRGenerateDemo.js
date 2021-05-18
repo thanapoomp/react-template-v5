@@ -32,7 +32,7 @@ function QRGenerateDemo() {
 			/>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
 				<Link href="https://github.com/zpao/qrcode.react" color="textSecondary" target="_blank" rel="noopener">
-					pdfmake
+					QR
 			</Link>
 			</Grid>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
