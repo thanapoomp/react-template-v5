@@ -3,6 +3,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
+import Alert from '@material-ui/lab/Alert';
 import { useHistory } from "react-router";
 import FormikAutoComplete from "../../../Common/components/CustomFormik/FormikAutoComplete";
 import * as demoAxios from "../../_redux/demoAxios";
@@ -10,32 +11,30 @@ import * as demoAxios from "../../_redux/demoAxios";
 function FormWithAutoComplete() {
   const history = useHistory();
   const [state, setState] = React.useState({
-    relatedEmployee: null,
+    product: null,
   });
 
-  const loadEmployee = (firstName) => {
-    return demoAxios.getEmployeeFilter(
-      "firstName",
+  const loadProduct = (name) => {
+    return demoAxios.getProductFilter(
+      "name",
       true,
       1,
       50,
-      "",
-      firstName,
-      ""
+      name
     );
   };
 
   React.useEffect(() => {
     // ตัวอย่าง สำหรับ load ข้อมูลเพื่อ show 
-    let id = "e1b57a9c-23e3-409f-1c6a-08d8bcedf819";
+    let id = 1;
     demoAxios
-      .getEmployee(id)
+      .getProduct(id)
       .then((res) => {
         if (res.data.isSuccess) {
-            let relatedEmployeeToSet = {id: res.data.data.id,firstName: res.data.data.firstName}
+            let productToSet = {id: res.data.data.id,name: res.data.data.name}
           setState({
             ...state,
-            relatedEmployee: relatedEmployeeToSet,
+            product: productToSet,
           });
         } else alert(res.data.message);
       })
@@ -49,14 +48,14 @@ function FormWithAutoComplete() {
     validate: (values) => {
       const errors = {};
 
-      if (!values.relatedEmployee) {
-        errors.relatedEmployee = "Required";
+      if (!values.product) {
+        errors.product = "Required";
       }
 
       return errors;
     },
     initialValues: {
-      relatedEmployee: state.relatedEmployee,
+      product: state.product,
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -66,17 +65,18 @@ function FormWithAutoComplete() {
 
   return (
     <form onSubmit={formik.handleSubmit}>
+      <Alert severity="info" style={{marginBottom:10}}>ลองพิมพ์ So, sa</Alert>
       <Grid container spacing={3}>
         {/* relatedEmployee */}
         <Grid item xs={12} lg={3}>
           <FormikAutoComplete
             formik={formik}
-            name="relatedEmployee"
-            label="Related"
-            axiosGet={loadEmployee.bind(this)}
+            name="product"
+            label="Product"
+            axiosGet={loadProduct.bind(this)}
             valueFieldName="id"
-            displayFieldName="firstName"
-            minSearchLen={3}
+            displayFieldName="name"
+            minSearchLen={2}
           />
         </Grid>
 
