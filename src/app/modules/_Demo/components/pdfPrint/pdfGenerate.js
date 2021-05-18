@@ -47,7 +47,7 @@ export const printPDF = (data) => {
 								},
 								{
 									width: "auto",
-									text: `${data.FastName} ${data.LastName}`,
+									text: `${data.firstName} ${data.lastName}`,
 								},
 							],
 							// optional space between columns
@@ -64,7 +64,7 @@ export const printPDF = (data) => {
 								},
 								{
 									width: "auto",
-									text: "Address",
+									text: `${data.address}`,
 								},
 							],
 
@@ -81,7 +81,7 @@ export const printPDF = (data) => {
 								},
 								{
 									width: "auto",
-									text: "",
+									text: `${data.sex}`,
 								},
 							],
 
@@ -98,7 +98,7 @@ export const printPDF = (data) => {
 								},
 								{
 									width: "auto",
-									text: "HBD",
+									text: `${data.birthDate}`,
 								},
 							],
 
@@ -115,7 +115,7 @@ export const printPDF = (data) => {
 								},
 								{
 									width: "auto",
-									text: "test",
+									text: `${data.occupation}`,
 								},
 							],
 
@@ -132,7 +132,7 @@ export const printPDF = (data) => {
 								},
 								{
 									width: "*",
-									text: "test",
+									text: `${data.startCover}`,
 								},
 								{
 									width: 50,
@@ -141,7 +141,7 @@ export const printPDF = (data) => {
 								},
 								{
 									width: "*",
-									text: "Test",
+									text: `${data.endCover}`,
 								},
 								{
 									width: 30,
@@ -159,24 +159,24 @@ export const printPDF = (data) => {
 						[
 							{ text: "ข้อตกลงคุ้มครอง/เอกสารแนบท้าย", alignment: "center" },
 							{ text: "จำนวนเงินเอาประกันภัย(บาท)", alignment: "center" },
-							{ text: "เบี้ยประกันภัย (บาท)", alignment: "center" },
+							{ text: "เบี้ยประกันภัย  (บาท)", alignment: "center" },
 						],
 						[
 							"1.ผลประโยชน์การเจ็บป่วยด้วยโรคติดเชื้อไวรัสโคโรนา 2019(COVID - 19)",
-							{ text: "", alignment: "right" },
-							"",
+							{ text: `${data.maxCover}`, alignment: "right" },
+							{ text: `${data.premium}`, alignment: "right" },
 						],
 						[
 							"2.ผลประโยชน์การเสียชีวิต การสูญเสียอวัยวะสายตา หรือทุพพลภาพถาวรสิ้นเชิง(อ.บ. 1)",
-							{ text: "", alignment: "right" },
-							"",
+							{ text: `${data.maxCover}`, alignment: "right" },
+							{ text: `0`, alignment: "right" },
 						],
 						[
 							{ text: "เบี้ยประกันภัยสุทธิ", colSpan: 2, alignment: "right" }, "", {
 								columns: [
 									{
 										width: "*",
-										text: "",
+										text: `${data.premium}`,
 										alignment: "right"
 									},
 									{
@@ -193,7 +193,7 @@ export const printPDF = (data) => {
 								columns: [
 									{
 										width: "*",
-										text: "",
+										text: `${data.duty}`,
 										alignment: "right"
 									},
 									{
@@ -210,7 +210,7 @@ export const printPDF = (data) => {
 								columns: [
 									{
 										width: "*",
-										text: "",
+										text: `${data.vat}`,
 										alignment: "right"
 									},
 									{
@@ -227,7 +227,7 @@ export const printPDF = (data) => {
 								columns: [
 									{
 										width: "*",
-										text: "",
+										text: `${data.premium}`,
 										alignment: "right"
 									},
 									{

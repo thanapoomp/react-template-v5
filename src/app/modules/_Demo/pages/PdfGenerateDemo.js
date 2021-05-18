@@ -5,14 +5,33 @@ import Fab from '@material-ui/core/Fab';
 import LightBlue from "@material-ui/core/colors/lightBlue";
 import { printPDF } from '../components/pdfPrint/pdfGenerate'
 import Icon from "@material-ui/core/Icon";
-import { useSelector } from 'react-redux'
 
 function PdfGenerateDemo() {
-	const policyReducer = useSelector(({ demo }) => demo)
 
 	const lightBlue = LightBlue[400];
+
+	const [state] = React.useState({
+		policyDetail: {
+			appId: "1234",
+			firstName: "สมชาย",
+			lastName: "ใจดี",
+			sex: "ชาย",
+			birthDate: "10/04/1990",
+			age: 30,
+			address: "123/123",
+			occupation: "รับจ้าง",
+			phone: "084101010101",
+			maxCover: 100000,
+			premium: 380,
+			duty: 0,
+			vat: 0,
+			sum: 100000,
+			startCover: "01/05/2020",
+			endCover: "01/05/2021",
+		  },
+	})
 	const handleDownloadPDF = () => {
-		printPDF(policyReducer.policyDetail);
+		printPDF(state.policyDetail);
 	}
 	return (
 		<div>

@@ -17,25 +17,6 @@ const initialState = {
   switch1: false,
   switch2: false,
   switch3: false,
-
-  policyDetail: {
-    AppId: "0",
-    FastName: "สมชาย",
-    LastName: "ใจดี",
-    Sex: "",
-    HBD: "",
-    Age: 0,
-    Address: "",
-    Occupation: "",
-    Phone: "0",
-    MaxCover: 0,
-    Premium: 0,
-    Duty: 0,
-    Vat: 0,
-    Sum: 0,
-    StartCoverDate: "",
-    EndCoverDate: "",
-  },
 };
 
 // reducer แต่ละ Action จะไป update State อย่างไร
