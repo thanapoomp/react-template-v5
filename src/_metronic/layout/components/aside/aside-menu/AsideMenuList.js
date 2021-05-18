@@ -59,7 +59,7 @@ export function AsideMenuList({ layoutProps }) {
         {/* Demo zone สามารถ comment ทิ้งได้ */}
         <>
           {/* Custom roles */}
-          {isShowMenu([ROLES.developer, ROLES.Manager]) && (
+          {isShowMenu([ROLES.admin, ROLES.Manager]) && (
             <Hoc>
               {/* begin::section */}
               <li className="menu-section ">
@@ -80,7 +80,7 @@ export function AsideMenuList({ layoutProps }) {
                       src={toAbsoluteUrl("/media/svg/icons/Food/Bucket.svg")}
                     />
                   </span>
-                  <span className="menu-text">Show only developer and manager</span>
+                  <span className="menu-text">Show only Admin and Manager</span>
                 </NavLink>
               </li>
               {/*end::1 Level*/}
