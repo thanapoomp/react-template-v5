@@ -5,11 +5,23 @@
 
 /* eslint-disable no-restricted-imports */
 import React from 'react'
-
+import Grid from "@material-ui/core/Grid";
+import Link from '@material-ui/core/Link';
 function QRGenerateDemo() {
 
 	var QRCode = require('qrcode.react');
+
 	return (
+		<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
+			<Link href="https://github.com/zpao/qrcode.react" color="textSecondary" target="_blank" rel="noopener">
+				pdfmake
+			</Link>
+		</Grid>,
+		<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
+			<Link href="https://zpao.github.io/qrcode.react/" color="textSecondary" target="_blank" rel="noopener">
+				ลิ้งตัวอย่าง
+			</Link>
+		</Grid>,
 		<QRCode
 			value={"https://www.siamsmile.co.th/"}
 			size={200}

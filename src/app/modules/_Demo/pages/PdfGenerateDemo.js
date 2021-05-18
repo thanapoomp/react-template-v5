@@ -5,7 +5,6 @@ import Fab from '@material-ui/core/Fab';
 import LightBlue from "@material-ui/core/colors/lightBlue";
 import { printPDF } from '../components/pdfPrint/pdfGenerate'
 import Icon from "@material-ui/core/Icon";
-import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
 function PdfGenerateDemo() {
