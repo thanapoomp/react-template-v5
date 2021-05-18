@@ -222,6 +222,19 @@ export function AsideMenuList({ layoutProps }) {
             </NavLink>
           </li>
           {/* End::1 QRGenerateDemo */}
+          {/* begin::1 apexcharts */}
+          <li
+            className={`menu-item ${getMenuItemActive("/demo/apexcharts", false)}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/apexcharts">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">Apexcharts</span>
+            </NavLink>
+          </li>
+          {/* End::1 apexcharts */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>

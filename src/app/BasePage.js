@@ -24,6 +24,7 @@ import FormWithSwitch from "./modules/_Demo/pages/formComponents/FormWithSwitch"
 import FormWithTimePicker from "./modules/_Demo/pages/formComponents/FormWithTimePicker";
 import pdfGenerrate from "./modules/_Demo/pages/PdfGenerateDemo";
 import QRGenerateDemo from "./modules/_Demo/pages/QRGenerateDemo";
+import ChartDemo from "./modules/_Demo/pages/ChartDemo";
 import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 
@@ -57,6 +58,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithTimePicker" component={FormWithTimePicker} />
         <ContentRoute exact path="/demo/pdfGenerrate" component={pdfGenerrate} />
         <ContentRoute exact path="/demo/QRGenerateDemo" component={QRGenerateDemo} />
+        <ContentRoute exact path="/demo/apexcharts" component={ChartDemo} />
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route
