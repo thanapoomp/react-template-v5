@@ -24,6 +24,7 @@ import FormWithSwitch from "./modules/_Demo/pages/formComponents/FormWithSwitch"
 import FormWithTimePicker from "./modules/_Demo/pages/formComponents/FormWithTimePicker";
 import pdfGenerrate from "./modules/_Demo/pages/PdfGenerateDemo";
 import QRGenerateDemo from "./modules/_Demo/pages/QRGenerateDemo";
+import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
 
 export default function BasePage(props) {
 
@@ -38,7 +39,6 @@ export default function BasePage(props) {
         <ContentRoute exact path="/reduxDemo" component={ReduxDemo} />
         <PrivateRoute exact path="/test" roles={[ROLES.admin, ROLES.developer]} component={Test} />
         <ContentRoute exact path="/demo/formDemo" component={FormDemo} />
-        <ContentRoute exact path="/demo/formWithTextField" component={FormWithTextField} />
         <ContentRoute exact path="/demo/formWithAutoComplete" component={FormWithAutoComplete} />
         <ContentRoute exact path="/demo/formWithCheckBox" component={FormWithCheckBox} />
         <ContentRoute exact path="/demo/formWithCheckboxGroup" component={FormWithCheckboxGroup} />
@@ -50,6 +50,8 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithRating" component={FormWithRating} />
         <ContentRoute exact path="/demo/formWithSlider" component={FormWithSlider} />
         <ContentRoute exact path="/demo/formWithSwitch" component={FormWithSwitch} />
+        <ContentRoute exact path="/demo/formWithTextMaskCardId" component={FormWithTextMaskCardId} />
+        <ContentRoute exact path="/demo/formWithTextField" component={FormWithTextField} />
         <ContentRoute exact path="/demo/formWithTimePicker" component={FormWithTimePicker} />
         <ContentRoute exact path="/demo/pdfGenerrate" component={pdfGenerrate} />
         <ContentRoute exact path="/demo/QRGenerateDemo" component={QRGenerateDemo} />
