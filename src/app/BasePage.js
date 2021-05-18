@@ -8,9 +8,6 @@ import { ROLES } from "../Constants";
 import Alert from "./modules/_Demo/Alert";
 import Test from  './pages/Test'
 import ReduxDemo from './modules/_Demo/pages/ReduxDemo'
-import UseFormikWithTextField from './modules/_FormikUseFormik/pages/WithTextField'
-import UseFormikWithDropdownCascade from './modules/_FormikUseFormik/pages/WithDropdownCascade'
-import WithAllComponents from "./modules/_FormikUseFormik/pages/WithAllComponents";
 import FormDemo from "./modules/_Demo/pages/FormDemo";
 import FormWithTextField from './modules/_Demo/pages/FormWithTextField'
 import FormWithAutoComplete from "./modules/_Demo/pages/FormWithAutoComplete";
@@ -23,6 +20,8 @@ import FormWithDropdownCascade from "./modules/_Demo/pages/FormWithDropdownCasca
 import FormWithRadioGroup from "./modules/_Demo/pages/FormWithRadioGroup";
 import FormWithRating from "./modules/_Demo/pages/FormWithRating";
 import FormWithSlider from "./modules/_Demo/pages/FormWithSlider";
+import FormWithSwitch from "./modules/_Demo/pages/FormWithSwitch";
+import FormWithTimePicker from "./modules/_Demo/pages/FormWithTimePicker";
 
 export default function BasePage(props) {
 
@@ -36,9 +35,6 @@ export default function BasePage(props) {
         <ContentRoute exact path="/alert" component={Alert} />
         <ContentRoute exact path="/reduxDemo" component={ReduxDemo} />
         <PrivateRoute exact path="/test" roles={[ROLES.admin,ROLES.developer]} component={Test} />
-        <ContentRoute exact path="/useFormik/textfield" component={UseFormikWithTextField} />
-        <ContentRoute exact path="/useFormik/dropdown" component={UseFormikWithDropdownCascade} />
-        <ContentRoute exact path="/useFormik/all" component={WithAllComponents} />
         <ContentRoute exact path="/demo/formDemo" component={FormDemo}/>
         <ContentRoute exact path="/demo/formWithTextField" component={FormWithTextField}/>
         <ContentRoute exact path="/demo/formWithAutoComplete" component={FormWithAutoComplete}/>
@@ -51,6 +47,8 @@ export default function BasePage(props) {
         <ContentRoute exact path="/demo/formWithRadioGroup" component={FormWithRadioGroup}/>
         <ContentRoute exact path="/demo/formWithRating" component={FormWithRating}/>
         <ContentRoute exact path="/demo/formWithSlider" component={FormWithSlider}/>
+        <ContentRoute exact path="/demo/formWithSwitch" component={FormWithSwitch}/>
+        <ContentRoute exact path="/demo/formWithTimePicker" component={FormWithTimePicker}/>
         {/* End Demo part สามารถ comment ได้ */}
 
         <Route

@@ -13,7 +13,7 @@ function FormikSwitch(props) {
           checked={props.formik.values[`${props.name}`]}
           onBlur={props.formik.handleBlur}
           onChange={props.formik.handleChange}
-          color="primary"
+          color={props.color}
           inputProps={{ "aria-label": "primary checkbox" }}
           disabled={props.disabled}
         />
@@ -25,6 +25,7 @@ function FormikSwitch(props) {
 
 FormikSwitch.propTypes = {
     formik: PropTypes.object,
+    color: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string,
     disabled: PropTypes.bool
@@ -32,6 +33,7 @@ FormikSwitch.propTypes = {
 
 FormikSwitch.defaultProps = {
     formik: {},
+    color: 'primary',
     name:'Do not forget to set name',
     label: 'Do not forget to set label',
     disabled: false

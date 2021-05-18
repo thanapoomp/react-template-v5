@@ -90,11 +90,36 @@ function FormDemo() {
 
       <Button color="primary"
         onClick={() => {
+          history.push("/demo/formWithSwitch");
+        }}
+      >
+        Switch
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
+          history.push("/demo/formWithTimePicker");
+        }}
+      >
+        TimePicker
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
           history.push("/demo/formWithTextField");
         }}
       >
         TextFields
       </Button>
+
+      TODO: 
+      - Text Mask
+      - File Upload 
+      - PDF Generate
+      - QR Generate
+      - Print Form
+
+
     </div>
   );
 }

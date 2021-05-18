@@ -10,6 +10,7 @@ function FormikTimePicker(props) {
         <KeyboardTimePicker
         fullWidth
         name={props.name}
+        autoOk={props.autoOk}
         ampm={false}
         views={(props.showSecond)? ["hours", "minutes", "seconds"]:["hours", "minutes"]}
         format={(props.showSecond)? "HH:mm:ss": "HH:mm"}
@@ -41,7 +42,8 @@ FormikTimePicker.propTypes = {
     disabled: PropTypes.bool,
     disableFuture: PropTypes.bool,
     disablePast: PropTypes.bool,
-    showSecond: PropTypes.bool
+    showSecond: PropTypes.bool,
+    autoOk: PropTypes.bool
   };
   
   // Same approach for defaultProps too
@@ -53,6 +55,7 @@ FormikTimePicker.propTypes = {
     disableFuture: false,
     disablePast: false,
     showSecond: false,
+    autoOk:false
   };
 
 export default FormikTimePicker;

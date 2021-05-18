@@ -80,7 +80,7 @@ export function AsideMenuList({ layoutProps }) {
                       src={toAbsoluteUrl("/media/svg/icons/Food/Bucket.svg")}
                     />
                   </span>
-                  <span className="menu-text">test</span>
+                  <span className="menu-text">Show only developer and manager</span>
                 </NavLink>
               </li>
               {/*end::1 Level*/}
@@ -149,25 +149,6 @@ export function AsideMenuList({ layoutProps }) {
                     <ul className="menu-subnav">
                       {/*begin::3 Level*/}
                       <li
-                        className={`menu-item  ${getMenuItemActive(
-                          "/google-material/inputs/autocomplete"
-                        )}`}
-                        aria-haspopup="true"
-                      >
-                        <NavLink
-                          className="menu-link"
-                          to="/google-material/inputs/autocomplete"
-                        >
-                          <i className="menu-bullet menu-bullet-dot">
-                            <span />
-                          </i>
-                          <span className="menu-text">Level 3</span>
-                        </NavLink>
-                      </li>
-                      {/*end::3 Level*/}
-
-                      {/*begin::3 Level*/}
-                      <li
                         className={`menu-item  ${getMenuItemActive("/alert")}`}
                         aria-haspopup="true"
                       >
@@ -205,17 +186,12 @@ export function AsideMenuList({ layoutProps }) {
 
         {/* begin::section */}
         <li className="menu-section ">
-          <h4 className="menu-text">UseFormik</h4>
-          <i className="menu-icon flaticon-more-v2"></i>
-        </li>
-        {/* begin::section */}
-        <li className="menu-section ">
           <h4 className="menu-text">FormDemo</h4>
           <i className="menu-icon flaticon-more-v2"></i>
         </li>
 
         {/* end:: section */}
-        {/*begin::1 newEmployee*/}
+        {/*begin::1 Form Demo*/}
         <li
           className={`menu-item ${getMenuItemActive("/demo/formDemo", false)}`}
           aria-haspopup="true"
@@ -227,56 +203,7 @@ export function AsideMenuList({ layoutProps }) {
             <span className="menu-text">FormDemo</span>
           </NavLink>
         </li>
-        {/*End::1 newEmployee*/}
-
-        {/* end:: section */}
-        {/*begin::1 newEmployee*/}
-        <li
-          className={`menu-item ${getMenuItemActive("/useFormik/all", false)}`}
-          aria-haspopup="true"
-        >
-          <NavLink className="menu-link" to="/useFormik/all">
-            <span className="svg-icon menu-icon">
-              <Icon>star</Icon>
-            </span>
-            <span className="menu-text">All</span>
-          </NavLink>
-        </li>
-        {/*End::1 newEmployee*/}
-
-        {/*begin::1 newEmployee*/}
-        <li
-          className={`menu-item ${getMenuItemActive(
-            "/useFormik/textfield",
-            false
-          )}`}
-          aria-haspopup="true"
-        >
-          <NavLink className="menu-link" to="/useFormik/textfield">
-            <span className="svg-icon menu-icon">
-              <Icon>star</Icon>
-            </span>
-            <span className="menu-text">Text field</span>
-          </NavLink>
-        </li>
-        {/*End::1 newEmployee*/}
-        {/*begin::1 newEmployee*/}
-        <li
-          className={`menu-item ${getMenuItemActive(
-            "/useFormik/dropdown",
-            false
-          )}`}
-          aria-haspopup="true"
-        >
-          <NavLink className="menu-link" to="/useFormik/dropdown">
-            <span className="svg-icon menu-icon">
-              <Icon>star</Icon>
-            </span>
-            <span className="menu-text">Dropdown</span>
-          </NavLink>
-        </li>
-        {/*End::1 newEmployee*/}
-
+        {/*End::1 Form Demo*/}
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>
       {/* end::Menu Nav */}
