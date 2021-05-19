@@ -11,46 +11,46 @@ export const actionTypes = {
 
 // state ค่าที่ถูกเก็บไว้
 const initialState = {
-    imposter: '',
-    playerList: ["Ming01","Cuteful","Diadora","KONDEE"],
-    lightState: 'OFF',
-    switch1: false,
-    switch2: false,
-    switch3: false
+  imposter: '',
+  playerList: ["Ming01", "Cuteful", "Diadora", "KONDEE"],
+  lightState: 'OFF',
+  switch1: false,
+  switch2: false,
+  switch3: false,
 };
 
 // reducer แต่ละ Action จะไป update State อย่างไร
 export const reducer = (state = initialState, action) => {
-    switch (action.type) {
+  switch (action.type) {
 
-      case actionTypes.ADD_PLAYER: {
-        return {...state, playerList: action.payload};
-      }
-
-      case actionTypes.UPDATE_LIGHTSTATUS: {
-        return {...state, lightState: action.payload};
-      }
-
-      case actionTypes.UPDATE_IMPOSTER: {
-        return {...state, imposter: action.payload};
-      }
-
-      case actionTypes.TURN_SWITCH1: {
-        return {...state, switch1: action.payload};
-      }
-      
-      case actionTypes.TURN_SWITCH2: {
-        return {...state, switch2: action.payload};
-      }
-
-      case actionTypes.TURN_SWITCH3: {
-        return {...state, switch3: action.payload};
-      }
-
-      default:
-        return state;
+    case actionTypes.ADD_PLAYER: {
+      return { ...state, playerList: action.payload };
     }
-  };
+
+    case actionTypes.UPDATE_LIGHTSTATUS: {
+      return { ...state, lightState: action.payload };
+    }
+
+    case actionTypes.UPDATE_IMPOSTER: {
+      return { ...state, imposter: action.payload };
+    }
+
+    case actionTypes.TURN_SWITCH1: {
+      return { ...state, switch1: action.payload };
+    }
+
+    case actionTypes.TURN_SWITCH2: {
+      return { ...state, switch2: action.payload };
+    }
+
+    case actionTypes.TURN_SWITCH3: {
+      return { ...state, switch3: action.payload };
+    }
+
+    default:
+      return state;
+  }
+};
 
 //action เอาไว้เรียกจากข้างนอก เพื่อเปลี่ยน state
 export const actions = {

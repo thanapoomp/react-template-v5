@@ -59,7 +59,7 @@ export function AsideMenuList({ layoutProps }) {
         {/* Demo zone สามารถ comment ทิ้งได้ */}
         <>
           {/* Custom roles */}
-          {isShowMenu([ROLES.developer, ROLES.Manager]) && (
+          {isShowMenu([ROLES.admin, ROLES.Manager]) && (
             <Hoc>
               {/* begin::section */}
               <li className="menu-section ">
@@ -83,6 +83,7 @@ export function AsideMenuList({ layoutProps }) {
                   <span className="menu-text">
                     Show only developer and manager
                   </span>
+                  <span className="menu-text">Show only Admin and Manager</span>
                 </NavLink>
               </li>
               {/*end::1 Level*/}
@@ -218,6 +219,86 @@ export function AsideMenuList({ layoutProps }) {
             </NavLink>
           </li>
           {/*End::1 Datatable Demo*/}
+          {/* begin::1 pdfGenerrate */}
+          <li
+            className={`menu-item ${getMenuItemActive(
+              "/demo/pdfGenerrate",
+              false
+            )}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/pdfGenerrate">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">PDF GenerrateDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 pdfGenerrate */}
+          {/* begin::1 QRGenerateDemo */}
+          <li
+            className={`menu-item ${getMenuItemActive(
+              "/demo/QRGenerateDemo",
+              false
+            )}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/QRGenerateDemo">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">QR GenerateDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 QRGenerateDemo */}
+          {/* begin::1 apexcharts */}
+          <li
+            className={`menu-item ${getMenuItemActive(
+              "/demo/apexcharts",
+              false
+            )}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/apexcharts">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">ApexchartsDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 apexcharts */}
+          {/* begin::1 PrintComponent */}
+          <li
+            className={`menu-item ${getMenuItemActive(
+              "/demo/PrintComponent",
+              false
+            )}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/PrintComponent">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">PrintComponentDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 PrintComponent */}
+          {/* begin::1 BarcodeGenerateDemo */}
+          <li
+            className={`menu-item ${getMenuItemActive(
+              "/demo/BarcodeGenerateDemo",
+              false
+            )}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/BarcodeGenerateDemo">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">BarcodeGenerateDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 PrintComponent */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>

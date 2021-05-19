@@ -14,7 +14,7 @@ export const API_URL =
 
 
 export const ROLES = {
-  user: 'user',
+  user: 'User',
   Manager: 'Manager',
   admin: "Admin",
   developer: "Developer",

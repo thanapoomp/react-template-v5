@@ -112,11 +112,25 @@ function FormDemo() {
         TextFields
       </Button>
 
+      <Button color="primary"
+        onClick={() => {
+          history.push("/demo/formWithTextNumber");
+        }}
+      >
+        TextNumber
+      </Button>
+
+      <Button color="primary"
+        onClick={() => {
+          history.push("/demo/formWithTextMaskCardId");
+        }}
+      >
+        TextMaskCardId
+      </Button>
+
       TODO: 
       - Text Mask
       - File Upload 
-      - PDF Generate
-      - QR Generate
       - Print Form
 
 
