@@ -31,7 +31,7 @@ function PrintComponent() {
 			</Fab>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 20 }}>
 				<Link href="https://github.com/gregnb/react-to-print" color="textSecondary" target="_blank" rel="noopener">
-					react-to-print content (git hub)
+					Print Page เราใช้ react-to-print content (git hub)
 				</Link>
 			</Grid>
 

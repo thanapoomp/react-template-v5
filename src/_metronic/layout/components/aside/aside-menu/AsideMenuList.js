@@ -248,6 +248,19 @@ export function AsideMenuList({ layoutProps }) {
             </NavLink>
           </li>
           {/* End::1 PrintComponent */}
+          {/* begin::1 BarcodeGenerateDemo */}
+          <li
+            className={`menu-item ${getMenuItemActive("/demo/BarcodeGenerateDemo", false)}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/BarcodeGenerateDemo">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">BarcodeGenerateDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 PrintComponent */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>

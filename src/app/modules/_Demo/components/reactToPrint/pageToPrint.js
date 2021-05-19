@@ -1,25 +1,11 @@
 import React from 'react'
-
 export class ComponentToPrint extends React.Component {
 
 	render() {
 		return (
 			<>
 				<div style={{ marginTop: 30 }}>
-					<table>
-						<thead>
-							<th >column 1</th>
-							<th>column 2</th>
-							<th>column 3</th>
-						</thead>
-						<tbody>
-							<tr>
-								<td>data 1</td>
-								<td>data 2</td>
-								<td>data 3</td>
-							</tr>
-						</tbody>
-					</table>
+					555
 				</div>
 			</>
 		);
