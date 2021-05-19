@@ -231,10 +231,23 @@ export function AsideMenuList({ layoutProps }) {
               <span className="svg-icon menu-icon">
                 <Icon>star</Icon>
               </span>
-              <span className="menu-text">Apexcharts</span>
+              <span className="menu-text">ApexchartsDemo</span>
             </NavLink>
           </li>
           {/* End::1 apexcharts */}
+          {/* begin::1 PrintComponent */}
+          <li
+            className={`menu-item ${getMenuItemActive("/demo/PrintComponent", false)}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/PrintComponent">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">PrintComponentDemo</span>
+            </NavLink>
+          </li>
+          {/* End::1 PrintComponent */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>
