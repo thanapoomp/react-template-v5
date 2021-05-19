@@ -1,8 +1,10 @@
-import axios from 'axios'
-import * as CONST from '../../../../Constants'
-import {encodeURLWithParams}  from '../../Common/components/ParamsEncode'
+import axios from "axios";
+import * as CONST from "../../../../Constants";
+import { encodeURLWithParams } from "../../Common/components/ParamsEncode";
 
-const EMPLOYEE_URL = `${CONST.API_URL}/Workshop/employee`
+const EMPLOYEE_URL = `${CONST.API_URL}/Workshop/employee`;
+
+const PRODUCTGROUP_URL = `${CONST.API_URL}/ProductGroup`;
 
 export const addEmployee = (payload) => {
   return axios.post(`${EMPLOYEE_URL}/add`, payload);
@@ -20,15 +22,45 @@ export const getEmployee = (id) => {
   return axios.get(`${EMPLOYEE_URL}/${id}`);
 };
 
-export const getEmployeeFilter = (orderingField,ascendingOrder,page,recordsPerPage,employeeCode,firstName,lastName,) => {
-    let payload = {
-        page,
-        recordsPerPage,
-        orderingField,
-        ascendingOrder,
-        employeeCode,
-        firstName,
-        lastName
-    }
-    return axios.get(encodeURLWithParams(`${EMPLOYEE_URL}/filter`,payload))
-}
+export const getEmployeeFilter = (
+  orderingField,
+  ascendingOrder,
+  page,
+  recordsPerPage,
+  employeeCode,
+  firstName,
+  lastName
+) => {
+  let payload = {
+    page,
+    recordsPerPage,
+    orderingField,
+    ascendingOrder,
+    employeeCode,
+    firstName,
+    lastName,
+  };
+  return axios.get(encodeURLWithParams(`${EMPLOYEE_URL}/filter`, payload));
+};
+
+export const getProductGroupFilter = (
+  orderingField,
+  ascendingOrder,
+  page,
+  recordsPerPage,
+  Name,
+  StatusId
+) => {
+  debugger;
+  let payload = {
+    page,
+    recordsPerPage,
+    orderingField,
+    ascendingOrder,
+    Name,
+    StatusId,
+  };
+  return axios.get(
+    encodeURLWithParams(`${PRODUCTGROUP_URL}/getProductGroupFilter`, payload)
+  );
+};

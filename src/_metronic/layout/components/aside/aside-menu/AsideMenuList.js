@@ -80,7 +80,9 @@ export function AsideMenuList({ layoutProps }) {
                       src={toAbsoluteUrl("/media/svg/icons/Food/Bucket.svg")}
                     />
                   </span>
-                  <span className="menu-text">Show only developer and manager</span>
+                  <span className="menu-text">
+                    Show only developer and manager
+                  </span>
                 </NavLink>
               </li>
               {/*end::1 Level*/}
@@ -99,13 +101,13 @@ export function AsideMenuList({ layoutProps }) {
           {/*begin::1 Level*/}
           <li
             className={`menu-item menu-item-submenu ${getMenuItemActive(
-              "/google-material",
-              true
+              "/demo/pages",
+              false
             )}`}
             aria-haspopup="true"
             data-menu-toggle="hover"
           >
-            <NavLink className="menu-link menu-toggle" to="/google-material">
+            <NavLink to="/demo/pages" className="menu-link menu-toggle">
               <span className="svg-icon menu-icon">
                 <Icon>star</Icon>
               </span>
@@ -183,19 +185,39 @@ export function AsideMenuList({ layoutProps }) {
             </NavLink>
           </li>
 
-        {/*begin::1 Form Demo*/}
-        <li
-          className={`menu-item ${getMenuItemActive("/demo/formDemo", false)}`}
-          aria-haspopup="true"
-        >
-          <NavLink className="menu-link" to="/demo/formDemo">
-            <span className="svg-icon menu-icon">
-              <Icon>star</Icon>
-            </span>
-            <span className="menu-text">FormDemo</span>
-          </NavLink>
-        </li>
-        {/*End::1 Form Demo*/}
+          {/*begin::1 Form Demo*/}
+          <li
+            className={`menu-item ${getMenuItemActive(
+              "/demo/formDemo",
+              false
+            )}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/formDemo">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">FormDemo</span>
+            </NavLink>
+          </li>
+          {/*End::1 Form Demo*/}
+
+          {/*begin::1 Datatable Demo*/}
+          <li
+            className={`menu-item ${getMenuItemActive(
+              "/demo/datatableList",
+              false
+            )}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/demo/datatableList">
+              <span className="svg-icon menu-icon">
+                <Icon>star</Icon>
+              </span>
+              <span className="menu-text">Datatable List</span>
+            </NavLink>
+          </li>
+          {/*End::1 Datatable Demo*/}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
       </ul>

@@ -138,7 +138,7 @@ export function getInitLayoutConfig() {
         },
       },
       menu: {
-        dropdown: false, // ok
+        dropdown: true, // ok
         scroll: true, // ok
         "icon-style": "duotone", // duotone, line, bold, solid
         submenu: {
