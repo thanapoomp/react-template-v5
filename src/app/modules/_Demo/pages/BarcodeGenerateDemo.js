@@ -23,12 +23,12 @@ function QRGenerateDemo() {
 			/>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
 				<Link href="https://github.com/kciter/react-barcode" color="textSecondary" target="_blank" rel="noopener">
-					barcode เราใช้ react-barcode content (git hub)
+					barcode by react-barcode content (git hub)
 			</Link>
 			</Grid>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
 				<Link href="https://kciter.so/react-barcode/" color="textSecondary" target="_blank" rel="noopener">
-					ลิ้งตัวอย่าง
+					Examples
 			</Link>
 			</Grid>
 		</>
