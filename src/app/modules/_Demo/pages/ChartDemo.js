@@ -19,9 +19,20 @@ function Apexchart() {
 		setchartOption({
 			chart: {
 				id: "basic-bar",
-				zoom: {
-					enabled: false
-				}
+				toolbar: {
+					show: true,
+					tools: {
+						download: false,
+						selection: false,
+						zoom: false,
+						zoomin: false,
+						zoomout: false,
+						pan: false,
+						reset: true,
+						customIcons: []
+					},
+					autoSelected: 'zoom'
+				},
 			},
 			xaxis: {
 				categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
