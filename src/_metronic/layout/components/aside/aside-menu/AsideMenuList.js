@@ -52,7 +52,7 @@ export function AsideMenuList({ layoutProps }) {
             <span className="svg-icon menu-icon">
               <DvrIcon></DvrIcon>
             </span>
-            <span className="menu-text">dashboard</span>
+            <span className="menu-text">Test</span>
           </NavLink>
         </li>
 
@@ -105,7 +105,7 @@ export function AsideMenuList({ layoutProps }) {
             aria-haspopup="true"
             data-menu-toggle="hover"
           >
-            <NavLink to="/demo/pages" className="menu-link menu-toggle">
+            <NavLink to="/" className="menu-link menu-toggle">
               <span className="svg-icon menu-icon">
                 <Icon>star</Icon>
               </span>
@@ -115,189 +115,167 @@ export function AsideMenuList({ layoutProps }) {
             <div className="menu-submenu ">
               <i className="menu-arrow" />
               <ul className="menu-subnav">
+                {/* Inputs */}
+                {/*begin: Alert*/}
                 <li
-                  className="menu-item  menu-item-parent"
+                  className={`menu-item  ${getMenuItemActive("/alert")}`}
                   aria-haspopup="true"
                 >
-                  <span className="menu-link">
-                    <span className="menu-text">Demo 1</span>
-                  </span>
+                  <NavLink className="menu-link" to="/alert">
+                  <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">alert</span>
+                  </NavLink>
                 </li>
+                {/* end: Alert */}
 
-                {/* Inputs */}
-                {/*begin::2 Level*/}
+                {/*begin: Form Demo*/}
                 <li
-                  className={`menu-item menu-item-submenu ${getMenuItemActive(
-                    "/google-material/inputs",
-                    true
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/formDemo",
+                    false
                   )}`}
                   aria-haspopup="true"
-                  data-menu-toggle="hover"
                 >
-                  <NavLink
-                    className="menu-link menu-toggle"
-                    to="/google-material/inputs"
-                  >
-                    <i className="menu-bullet menu-bullet-dot">
-                      <span />
-                    </i>
-                    <span className="menu-text">Level 2</span>
-                    <i className="menu-arrow" />
+                  <NavLink className="menu-link" to="/demo/formDemo">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">FormDemo</span>
                   </NavLink>
-                  <div className="menu-submenu ">
-                    <i className="menu-arrow" />
-                    <ul className="menu-subnav">
-                      {/*begin::3 Level*/}
-                      <li
-                        className={`menu-item  ${getMenuItemActive("/alert")}`}
-                        aria-haspopup="true"
-                      >
-                        <NavLink className="menu-link" to="/alert">
-                          <i className="menu-bullet menu-bullet-dot">
-                            <span />
-                          </i>
-                          <span className="menu-text">alert</span>
-                        </NavLink>
-                      </li>
-                      {/*end::3 Level*/}
-                    </ul>
-                  </div>
                 </li>
+                {/*End:Form Demo*/}
+
+                {/*begin  Datatable Demo*/}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/datatableList",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/datatableList">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">Datatable List</span>
+                  </NavLink>
+                </li>
+                {/*End: Datatable Demo*/}
+
+                {/* begin: pdfGenerrate */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/pdfGenerrate",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/pdfGenerrate">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">PDF GenerrateDemo</span>
+                  </NavLink>
+                </li>
+                {/* End::1 pdfGenerrate */}
+
+                {/* begin: QRGenerateDemo */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/QRGenerateDemo",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/QRGenerateDemo">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">QR GenerateDemo</span>
+                  </NavLink>
+                </li>
+                {/* End::1 QRGenerateDemo */}
+
+                {/* begin: apexcharts */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/apexcharts",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/apexcharts">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">ApexchartsDemo</span>
+                  </NavLink>
+                </li>
+                {/* End: apexcharts */}
+
+                {/* begin PrintComponent */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/PrintComponent",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/PrintComponent">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">PrintComponentDemo</span>
+                  </NavLink>
+                </li>
+                {/* End PrintComponent */}
+
+                {/* begin BarcodeGenerateDemo */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/BarcodeGenerateDemo",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/BarcodeGenerateDemo">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">BarcodeGenerateDemo</span>
+                  </NavLink>
+                </li>
+                {/* end BarcodeGenerateDemo */}
+
+                {/*begin: Redux Demo*/}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/reduxDemo",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/reduxDemo">
+                    <span className="svg-icon menu-icon">
+                      <DvrIcon></DvrIcon>
+                    </span>
+                    <span className="menu-text">ReduxDemo</span>
+                  </NavLink>
+                </li>
+                {/* end redux demo */}
                 {/*end::2 Level*/}
               </ul>
             </div>
           </li>
           {/*end::1 Level*/}
+
           {/* End Menu Example */}
-
-          {/*begin::1 Redux Demo*/}
-          <li
-            className={`menu-item ${getMenuItemActive("/reduxDemo", false)}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/reduxDemo">
-              <span className="svg-icon menu-icon">
-                <DvrIcon></DvrIcon>
-              </span>
-              <span className="menu-text">ReduxDemo</span>
-            </NavLink>
-          </li>
-
-          {/*begin::1 Form Demo*/}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/demo/formDemo",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/demo/formDemo">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">FormDemo</span>
-            </NavLink>
-          </li>
-          {/*End::1 Form Demo*/}
-
-          {/*begin::1 Datatable Demo*/}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/demo/datatableList",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/demo/datatableList">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">Datatable List</span>
-            </NavLink>
-          </li>
-          {/*End::1 Datatable Demo*/}
-          {/* begin::1 pdfGenerrate */}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/demo/pdfGenerrate",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/demo/pdfGenerrate">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">PDF GenerrateDemo</span>
-            </NavLink>
-          </li>
-          {/* End::1 pdfGenerrate */}
-          {/* begin::1 QRGenerateDemo */}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/demo/QRGenerateDemo",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/demo/QRGenerateDemo">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">QR GenerateDemo</span>
-            </NavLink>
-          </li>
-          {/* End::1 QRGenerateDemo */}
-          {/* begin::1 apexcharts */}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/demo/apexcharts",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/demo/apexcharts">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">ApexchartsDemo</span>
-            </NavLink>
-          </li>
-          {/* End::1 apexcharts */}
-          {/* begin::1 PrintComponent */}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/demo/PrintComponent",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/demo/PrintComponent">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">PrintComponentDemo</span>
-            </NavLink>
-          </li>
-          {/* End::1 PrintComponent */}
-          {/* begin::1 BarcodeGenerateDemo */}
-          <li
-            className={`menu-item ${getMenuItemActive(
-              "/demo/BarcodeGenerateDemo",
-              false
-            )}`}
-            aria-haspopup="true"
-          >
-            <NavLink className="menu-link" to="/demo/BarcodeGenerateDemo">
-              <span className="svg-icon menu-icon">
-                <Icon>star</Icon>
-              </span>
-              <span className="menu-text">BarcodeGenerateDemo</span>
-            </NavLink>
-          </li>
-          {/* End::1 PrintComponent */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
+
+        
       </ul>
       {/* end::Menu Nav */}
     </>
