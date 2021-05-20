@@ -10,7 +10,7 @@ export default class ComponentToPrint extends React.Component {
 				<Grid item xs={12} lg={12} style={{ textAlign: 'center', marginBottom: 10 }}>
 					<img
 						alt="Google logo"
-						src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+						src="https://image.makewebeasy.net/makeweb/0/NMOB3ab6S/Home/logo.png"
 						width="80"
 					/>
 				</Grid>
