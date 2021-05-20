@@ -127,7 +127,7 @@ export function getInitLayoutConfig() {
         display: true,
         fixed: true,
         minimize: {
-          toggle: true, // allow toggle
+          toggle: false, // allow toggle
           default: false, // default state
           hoverable: false, // allow hover
         },
@@ -138,7 +138,7 @@ export function getInitLayoutConfig() {
         },
       },
       menu: {
-        dropdown: true, // ok
+        dropdown: false, // ok
         scroll: true, // ok
         "icon-style": "duotone", // duotone, line, bold, solid
         submenu: {
