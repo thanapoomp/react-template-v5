@@ -38,6 +38,9 @@ function FormWithUploader() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
+        <Grid item xs={12} lg={12}>
+          ใช้ <a href="https://yuvaleros.github.io/material-ui-dropzone/" target="_blank" rel="noopener noreferrer">materialui dropzone</a>
+        </Grid>
         {/* Start firstName */}
         <Grid item xs={12} lg={3}>
           <FormikUploader

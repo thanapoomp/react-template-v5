@@ -80,9 +80,6 @@ export function AsideMenuList({ layoutProps }) {
                       src={toAbsoluteUrl("/media/svg/icons/Food/Bucket.svg")}
                     />
                   </span>
-                  <span className="menu-text">
-                    Show only developer and manager
-                  </span>
                   <span className="menu-text">Show only Admin and Manager</span>
                 </NavLink>
               </li>
@@ -123,7 +120,7 @@ export function AsideMenuList({ layoutProps }) {
                   aria-haspopup="true"
                 >
                   <span className="menu-link">
-                    <span className="menu-text">Level 1</span>
+                    <span className="menu-text">Demo 1</span>
                   </span>
                 </li>
 
