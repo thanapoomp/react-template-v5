@@ -71,13 +71,13 @@ function Apexchart() {
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
 
 				<Link href="https://apexcharts.com/" color="textSecondary" target="_blank" rel="noopener">
-					chart เราใช้ Apexcharts
+					chart by Apexcharts
 				</Link>
 			</Grid>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
 
 				<Link href="https://apexcharts.com/docs/react-charts/" color="textSecondary" target="_blank" rel="noopener">
-					ลิ้งตัวอย่าง
+					Examples
 				</Link>
 			</Grid>
 		</Grid>

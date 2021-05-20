@@ -32,12 +32,12 @@ function QRGenerateDemo() {
 			/>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
 				<Link href="https://github.com/zpao/qrcode.react" color="textSecondary" target="_blank" rel="noopener">
-					Gennerate qrcode เราใช้ qrcode.react content (git hub)
+					Gennerate qrcode by qrcode.react content (git hub)
 			</Link>
 			</Grid>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
 				<Link href="https://zpao.github.io/qrcode.react/" color="textSecondary" target="_blank" rel="noopener">
-					ลิ้งตัวอย่าง
+					Examples
 			</Link>
 			</Grid>
 		</>
