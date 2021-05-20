@@ -30,6 +30,7 @@ import ChartDemo from "./modules/_Demo/pages/ChartDemo";
 import PrintComponent from "./modules/_Demo/pages/PrintComponent";
 import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
+import FormWithUploader from "./modules/_Demo/pages/formComponents/FormWithUploader";
 
 export default function BasePage(props) {
   return (
@@ -125,6 +126,11 @@ export default function BasePage(props) {
         />
         <ContentRoute
           exact
+          path="/demo/formWithUploader"
+          component={FormWithUploader}
+        />
+        <ContentRoute
+          exact
           path="/demo/pdfGenerrate"
           component={pdfGenerrate}
         />
@@ -144,8 +150,6 @@ export default function BasePage(props) {
           path="/demo/PrintComponent"
           component={PrintComponent}
         />
-        {/* End Demo part สามารถ comment ได้ */}
-
         <ContentRoute
           exact
           path="/demo/datatableList"

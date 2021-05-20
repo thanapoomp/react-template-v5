@@ -7,6 +7,7 @@ const EMPLOYEE_URL = `${CONST.API_URL}/Workshop/employee`;
 const PRODUCTGROUP_URL = `${CONST.API_URL}/ProductGroup`;
 //const EMPLOYEE_URL = `${CONST.API_URL}/Workshop/employee`
 const PRODUCT_URL = `${CONST.API_URL}/Product`;
+const FILEUPLOAD_URL = `${CONST.API_URL}/FileUpload`;
 
 export const addEmployee = (payload) => {
   return axios.post(`${EMPLOYEE_URL}/add`, payload);
@@ -86,3 +87,9 @@ export const getProductFilter = (
   };
   return axios.get(encodeURLWithParams(`${PRODUCT_URL}/filter`, payload));
 };
+
+export const postFile = (file) => {
+  let fd = new FormData();
+  fd.append('file',file)
+  return axios.post(`${FILEUPLOAD_URL}/UploadImage`,fd)
+}

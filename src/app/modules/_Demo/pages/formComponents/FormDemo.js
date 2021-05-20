@@ -128,11 +128,13 @@ function FormDemo() {
         TextMaskCardId
       </Button>
 
-      TODO: 
-      - Text Mask
-      - File Upload 
-      - Print Form
-
+      <Button color="primary"
+        onClick={() => {
+          history.push("/demo/formWithUploader");
+        }}
+      >
+        Uploader
+      </Button>
 
     </div>
   );
