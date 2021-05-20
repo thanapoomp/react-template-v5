@@ -52,13 +52,13 @@ function PdfGenerateDemo() {
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
 
 				<Link href="https://github.com/bpampuch/pdfmake" color="textSecondary" target="_blank" rel="noopener">
-					Gennerate PDF เราใช้ pdfmake content (git hub)
+					Gennerate PDF by pdfmake content (git hub)
 				</Link>
 			</Grid>
 			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
 
 				<Link href="http://pdfmake.org/playground.html" color="textSecondary" target="_blank" rel="noopener">
-					ลิ้งตัวอย่าง
+					Examples
 				</Link>
 			</Grid>
 		</div>

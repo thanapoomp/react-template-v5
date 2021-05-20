@@ -18,7 +18,10 @@ function Apexchart() {
 	React.useEffect(() => {
 		setchartOption({
 			chart: {
-				id: "basic-bar"
+				id: "basic-bar",
+				zoom: {
+					enabled: false
+				}
 			},
 			xaxis: {
 				categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
@@ -28,6 +31,10 @@ function Apexchart() {
 			{
 				name: 'Demo',
 				data: [30, 40, 45, 50, 49, 60, 70, 91],
+			},
+			{
+				name: 'Demo2',
+				data: [20, 41, 30, 55, 34, 60, 40, 80],
 			}
 		]);
 	}, [])
@@ -68,16 +75,16 @@ function Apexchart() {
 					/>
 				</Paper>
 			</Grid>
-			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
 
 				<Link href="https://apexcharts.com/" color="textSecondary" target="_blank" rel="noopener">
-					chart เราใช้ Apexcharts
+					chart by Apexcharts
 				</Link>
 			</Grid>
-			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10, marginTop: 10 }}>
+			<Grid item xs={12} md={12} lg={12} style={{ marginLeft: 10 }}>
 
 				<Link href="https://apexcharts.com/docs/react-charts/" color="textSecondary" target="_blank" rel="noopener">
-					ลิ้งตัวอย่าง
+					Examples
 				</Link>
 			</Grid>
 		</Grid>

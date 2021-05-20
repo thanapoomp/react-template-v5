@@ -18,6 +18,7 @@ import FormikTextField from "../../Common/components/CustomFormik/FormikTextFiel
 import ViewButton from "../../Common/components/Buttons/ViewButton";
 import EditButton from "../../Common/components/Buttons/EditButton";
 import { makeStyles } from "@material-ui/core/styles";
+import Link from "@material-ui/core/Link";
 
 var flatten = require("flat");
 
@@ -341,6 +342,23 @@ function DatatableListDemo(props) {
         columns={columns}
         options={options}
       />
+
+      <Grid
+        item
+        xs={12}
+        md={12}
+        lg={12}
+        style={{ marginLeft: 10, marginTop: 10 }}
+      >
+        <Link
+          href="https://github.com/gregnb/mui-datatables"
+          color="textSecondary"
+          target="_blank"
+          rel="noopener"
+        >
+          Datatable By MUI Datatable
+        </Link>
+      </Grid>
     </div>
   );
 }
