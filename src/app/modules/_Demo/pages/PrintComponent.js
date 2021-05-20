@@ -2,7 +2,6 @@
 import React, { useRef } from 'react';
 import ReactToPrint from 'react-to-print';
 import Grid from "@material-ui/core/Grid";
-import Fab from '@material-ui/core/Fab';
 import PrintIcon from '@material-ui/icons/Print';
 import LightBlue from "@material-ui/core/colors/lightBlue";
 import Link from '@material-ui/core/Link';

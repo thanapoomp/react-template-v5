@@ -18,7 +18,10 @@ function Apexchart() {
 	React.useEffect(() => {
 		setchartOption({
 			chart: {
-				id: "basic-bar"
+				id: "basic-bar",
+				zoom: {
+					enabled: false
+				}
 			},
 			xaxis: {
 				categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
@@ -28,6 +31,10 @@ function Apexchart() {
 			{
 				name: 'Demo',
 				data: [30, 40, 45, 50, 49, 60, 70, 91],
+			},
+			{
+				name: 'Demo2',
+				data: [20, 41, 30, 55, 34, 60, 40, 80],
 			}
 		]);
 	}, [])
