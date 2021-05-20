@@ -275,7 +275,6 @@ export function AsideMenuList({ layoutProps }) {
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
 
-        
       </ul>
       {/* end::Menu Nav */}
     </>
