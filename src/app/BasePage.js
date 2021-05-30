@@ -31,6 +31,7 @@ import PrintComponent from "./modules/_Demo/pages/PrintComponent";
 import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 import FormWithUploader from "./modules/_Demo/pages/formComponents/FormWithUploader";
+import ChartDrillDownDemo from "./modules/_Demo/pages/ChartDrillDownDemo";
 
 export default function BasePage(props) {
   return (
@@ -145,6 +146,11 @@ export default function BasePage(props) {
           component={BarcodeGenerateDemo}
         />
         <ContentRoute exact path="/demo/apexcharts" component={ChartDemo} />
+        <ContentRoute
+          exact
+          path="/demo/chartDrillDown"
+          component={ChartDrillDownDemo}
+        />
         <ContentRoute
           exact
           path="/demo/PrintComponent"

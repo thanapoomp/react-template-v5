@@ -215,6 +215,23 @@ export function AsideMenuList({ layoutProps }) {
                 </li>
                 {/* End: apexcharts */}
 
+                {/* begin: chartDrillDown */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/chartDrillDown",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/chartDrillDown">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">Chart DrillDown</span>
+                  </NavLink>
+                </li>
+                {/* End: apexcharts */}
+
                 {/* begin PrintComponent */}
                 <li
                   className={`menu-item ${getMenuItemActive(

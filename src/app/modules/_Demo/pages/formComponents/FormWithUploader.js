@@ -28,10 +28,18 @@ function FormWithUploader() {
       imageFile: state.imageFile,
     },
     onSubmit: (values) => {
-      demoAxios.postFile(values.imageFile).then((res) => {
-        alert(JSON.stringify(res.data, null, 2));
-        formik.setSubmitting(false);
-      });
+      demoAxios
+        .postFile(values.imageFile)
+        .then((res) => {
+          alert(JSON.stringify(res.data, null, 2));
+          formik.setSubmitting(false);
+        })
+        .catch((err) => {
+          alert(JSON.stringify(err.message,null,2))
+        })
+        .finally(() => {
+          formik.setSubmitting(false)
+        });
     },
   });
 
@@ -39,7 +47,14 @@ function FormWithUploader() {
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={3}>
         <Grid item xs={12} lg={12}>
-          ใช้ <a href="https://yuvaleros.github.io/material-ui-dropzone/" target="_blank" rel="noopener noreferrer">materialui dropzone</a>
+          ใช้{" "}
+          <a
+            href="https://yuvaleros.github.io/material-ui-dropzone/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            materialui dropzone
+          </a>
         </Grid>
         {/* Start firstName */}
         <Grid item xs={12} lg={3}>
@@ -48,7 +63,7 @@ function FormWithUploader() {
             name="imageFile"
             label="วางไฟล์ (jpg/png)"
             required
-            acceptedFiles={[".jpg", ".png", ".xlsx"]}
+            acceptedFiles={[".jpg", ".png"]}
           />
         </Grid>
 
