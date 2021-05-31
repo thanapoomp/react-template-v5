@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-restricted-imports */
 import React from "react";
 import Paper from "@material-ui/core/Paper";
@@ -7,26 +8,34 @@ import { chartData } from "./chartData";
 export default function ParentChart(props) {
   const [chartSeries, setchartSeries] = React.useState([]);
   const [chartOption, setchartOption] = React.useState({});
+  const [selectedIndex, setSelectedIndex] = React.useState({
+    dataPointIndex: -1,
+    seriesIndex: -1,
+  });
+  const [selectedDetail, setSelectedDetail] = React.useState({
+    dataPointName: "",
+    seriesName: "",
+  });
 
-  const handleClick = (config) => {
+  let handleClick = (config) => {
     // The last parameter config contains additional information like `seriesIndex` and `dataPointIndex` for cartesian charts
-    let dataPointIndex = config.dataPointIndex;
-    let seriesIndex = config.seriesIndex;
-    if (dataPointIndex !== -1 && seriesIndex !== -1) {
-      alert(`clicked data:${dataPointIndex} series:${seriesIndex}`);
+    if (config.dataPointIndex !== -1) {
+      let dataPointIndex = config.dataPointIndex;
+      let seriesIndex = config.seriesIndex;
+      setSelectedIndex({ dataPointIndex, seriesIndex });
     }
   };
 
   const prepareChartSeries = () => {
-    let tempData = []
+    let tempData = [];
 
     // แปลงข้อมูล
     let tempHelper = {};
     tempData = chartData.reduce(function(r, o) {
-      var key = o.branch + '-' + o.month;
-      
-      if(!tempHelper[key]) {
-        tempHelper[key] = {branch: o.branch, month: o.month, total: o.total}; // create a copy of o
+      var key = o.branch + "-" + o.month;
+
+      if (!tempHelper[key]) {
+        tempHelper[key] = { branch: o.branch, month: o.month, total: o.total }; // create a copy of o
         r.push(tempHelper[key]);
       } else {
         tempHelper[key].total += o.total;
@@ -41,29 +50,29 @@ export default function ParentChart(props) {
     let resultHelper = {};
     result = tempData.reduce(function(r, o) {
       var key = o.branch;
-      resultHelper.branch = o.branch
+      resultHelper.branch = o.branch;
 
-      if(!resultHelper[key]) {
+      //get data
+      if (!resultHelper[key]) {
         let data = []; //todo: get data
-        tempData.forEach(function (obj) {
+        tempData.forEach(function(obj) {
           if (obj.branch === o.branch) {
             data.push(obj.total);
           }
         });
-        console.log(data)
+        // console.log(data)
         resultHelper[key] = { name: o.branch, data: data }; //
         r.push(resultHelper[key]);
       }
       return r;
     }, []);
 
-    //prepare
     // console.log(result);
     return result;
   };
 
   const prepareXaxis = () => {
-    const uniqueMonth = [...new Set(chartData.map(item => item.month))];
+    const uniqueMonth = [...new Set(chartData.map((item) => item.month))];
     let xaxis = { categories: uniqueMonth };
     return xaxis;
   };
@@ -102,6 +111,28 @@ export default function ParentChart(props) {
     setchartSeries(series);
   }, []);
 
+  React.useEffect(() => {
+    if (selectedIndex.dataPointIndex !== -1) {
+      let dataPointName =
+        chartOption.xaxis.categories[selectedIndex.dataPointIndex];
+      let seriesName = chartSeries[selectedIndex.seriesIndex].name;
+      setSelectedDetail({
+        dataPointName,
+        seriesName,
+      });
+    }
+
+  }, [selectedIndex]);
+
+  React.useEffect(() => {
+    props.selectedChanged({
+      dataPintIndex: selectedIndex.dataPointIndex,
+      dataPointName: selectedDetail.dataPointName,
+      seriesIndex: selectedIndex.seriesIndex,
+      seriesName: selectedDetail.seriesName
+    })
+  }, [selectedDetail])
+
   return (
     <Paper elevation={3}>
       BAR
@@ -111,7 +142,12 @@ export default function ParentChart(props) {
         type="bar"
         width="100%"
       />
-      {/* {JSON.stringify(chartData,2,null)} */}
+      selectedIndex: {JSON.stringify(selectedIndex, 2, null)},<br></br>
+      selectedDetail: {JSON.stringify(selectedDetail, 2, null)}
+      <br></br>
+      series: {JSON.stringify(chartSeries, 2, null)}
+      <br></br>
+      options: {JSON.stringify(chartOption.xaxis, 2, null)}
     </Paper>
   );
 }
