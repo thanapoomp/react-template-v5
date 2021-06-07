@@ -32,6 +32,7 @@ import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWit
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 import FormWithUploader from "./modules/_Demo/pages/formComponents/FormWithUploader";
 import ChartDrillDownDemo from "./modules/_Demo/pages/ChartDrillDownDemo";
+import QRReaderDemo from "./modules/_Demo/pages/QRReaderDemo";
 
 export default function BasePage(props) {
   return (
@@ -139,6 +140,11 @@ export default function BasePage(props) {
           exact
           path="/demo/QRGenerateDemo"
           component={QRGenerateDemo}
+        />
+        <ContentRoute
+          exact
+          path="/demo/QRReaderDemo"
+          component={QRReaderDemo}
         />
         <ContentRoute
           exact
