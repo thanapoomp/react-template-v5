@@ -122,7 +122,7 @@ export function AsideMenuList({ layoutProps }) {
                   aria-haspopup="true"
                 >
                   <NavLink className="menu-link" to="/alert">
-                  <span className="svg-icon menu-icon">
+                    <span className="svg-icon menu-icon">
                       <Icon>star</Icon>
                     </span>
                     <span className="menu-text">alert</span>
@@ -249,6 +249,23 @@ export function AsideMenuList({ layoutProps }) {
                 </li>
                 {/* end BarcodeGenerateDemo */}
 
+                {/* begin QRReaderDemo */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/QRreader2",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/QRreader2">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">QR Reader Demo 2</span>
+                  </NavLink>
+                </li>
+                {/* end QRReaderDemo */}
+
                 {/*begin: Redux Demo*/}
                 <li
                   className={`menu-item ${getMenuItemActive(
@@ -274,7 +291,6 @@ export function AsideMenuList({ layoutProps }) {
           {/* End Menu Example */}
         </>
         {/* End Demo สามารถ comment ทิ้งได้ */}
-
       </ul>
       {/* end::Menu Nav */}
     </>

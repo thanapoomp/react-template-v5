@@ -31,6 +31,7 @@ import PrintComponent from "./modules/_Demo/pages/PrintComponent";
 import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 import FormWithUploader from "./modules/_Demo/pages/formComponents/FormWithUploader";
+import QRReaderDemo2 from "./modules/_Demo/pages/QRReaderDemo2";
 
 export default function BasePage(props) {
   return (
@@ -155,6 +156,8 @@ export default function BasePage(props) {
           path="/demo/datatableList"
           component={DatatableListDemo}
         />
+
+        <ContentRoute exact path="/demo/QRreader2" component={QRReaderDemo2} />
 
         {/* End Demo part สามารถ comment ได้ */}
 
