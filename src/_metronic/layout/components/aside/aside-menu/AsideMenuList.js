@@ -198,6 +198,23 @@ export function AsideMenuList({ layoutProps }) {
                 </li>
                 {/* End::1 QRGenerateDemo */}
 
+                {/* begin: QRReaderDemo */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/QRReaderDemo",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/QRReaderDemo">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">QR Reader Demo</span>
+                  </NavLink>
+                </li>
+                {/* End::1 QRReaderDemo */}
+
                 {/* begin: apexcharts */}
                 <li
                   className={`menu-item ${getMenuItemActive(
@@ -211,6 +228,23 @@ export function AsideMenuList({ layoutProps }) {
                       <Icon>star</Icon>
                     </span>
                     <span className="menu-text">ApexchartsDemo</span>
+                  </NavLink>
+                </li>
+                {/* End: apexcharts */}
+
+                {/* begin: chartDrillDown */}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/chartDrillDown",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/chartDrillDown">
+                    <span className="svg-icon menu-icon">
+                      <Icon>star</Icon>
+                    </span>
+                    <span className="menu-text">Chart DrillDown</span>
                   </NavLink>
                 </li>
                 {/* End: apexcharts */}

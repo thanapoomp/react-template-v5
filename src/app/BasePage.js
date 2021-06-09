@@ -31,7 +31,11 @@ import PrintComponent from "./modules/_Demo/pages/PrintComponent";
 import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 import FormWithUploader from "./modules/_Demo/pages/formComponents/FormWithUploader";
+
 import QRReaderDemo2 from "./modules/_Demo/pages/QRReaderDemo2";
+
+import ChartDrillDownDemo from "./modules/_Demo/pages/ChartDrillDownDemo";
+import QRReaderDemo from "./modules/_Demo/pages/QRReaderDemo";
 
 export default function BasePage(props) {
   return (
@@ -142,10 +146,20 @@ export default function BasePage(props) {
         />
         <ContentRoute
           exact
+          path="/demo/QRReaderDemo"
+          component={QRReaderDemo}
+        />
+        <ContentRoute
+          exact
           path="/demo/BarcodeGenerateDemo"
           component={BarcodeGenerateDemo}
         />
         <ContentRoute exact path="/demo/apexcharts" component={ChartDemo} />
+        <ContentRoute
+          exact
+          path="/demo/chartDrillDown"
+          component={ChartDrillDownDemo}
+        />
         <ContentRoute
           exact
           path="/demo/PrintComponent"
