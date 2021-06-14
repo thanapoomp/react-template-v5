@@ -283,23 +283,6 @@ export function AsideMenuList({ layoutProps }) {
                 </li>
                 {/* end BarcodeGenerateDemo */}
 
-                {/* begin QRReaderDemo */}
-                <li
-                  className={`menu-item ${getMenuItemActive(
-                    "/demo/QRreader2",
-                    false
-                  )}`}
-                  aria-haspopup="true"
-                >
-                  <NavLink className="menu-link" to="/demo/QRreader2">
-                    <span className="svg-icon menu-icon">
-                      <Icon>star</Icon>
-                    </span>
-                    <span className="menu-text">QR Reader Demo 2</span>
-                  </NavLink>
-                </li>
-                {/* end QRReaderDemo */}
-
                 {/*begin: Redux Demo*/}
                 <li
                   className={`menu-item ${getMenuItemActive(
