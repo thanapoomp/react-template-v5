@@ -32,8 +32,6 @@ import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWit
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 import FormWithUploader from "./modules/_Demo/pages/formComponents/FormWithUploader";
 
-import QRReaderDemo2 from "./modules/_Demo/pages/QRReaderDemo2";
-
 import ChartDrillDownDemo from "./modules/_Demo/pages/ChartDrillDownDemo";
 import QRReaderDemo from "./modules/_Demo/pages/QRReaderDemo";
 
@@ -170,8 +168,6 @@ export default function BasePage(props) {
           path="/demo/datatableList"
           component={DatatableListDemo}
         />
-
-        <ContentRoute exact path="/demo/QRreader2" component={QRReaderDemo2} />
 
         {/* End Demo part สามารถ comment ได้ */}
 
