@@ -4,22 +4,17 @@
 import React, { useState, useRef } from "react";
 import QrReader from "react-qr-reader";
 import {
-  Container,
-  Card,
-  CardContent,
   makeStyles,
   Grid,
   TextField,
   MenuItem,
   Button,
 } from "@material-ui/core";
-import FormikDropdown from "../../Common/components/CustomFormik/FormikDropdown";
 import * as swal from "../../Common/components/SweetAlert";
 import Link from "@material-ui/core/Link";
 import { useFormik } from "formik";
 import { toAbsoluteUrl } from "../../../../_metronic/_helpers";
 
-var QRCode = require("qrcode.react");
 
 const useStyles = makeStyles((theme) => ({
   conatiner: {
@@ -44,11 +39,6 @@ function QRReaderDemo(props) {
   const [scanResultWebCam, setScanResultWebCam] = useState("");
   const classes = useStyles();
   const qrRef = useRef(null);
-
-  const [data, setData] = useState({
-    firstName: "Prattana",
-    lastName: "Phiwkaew",
-  });
 
   const formik = useFormik({
     enableReinitialize: true,
