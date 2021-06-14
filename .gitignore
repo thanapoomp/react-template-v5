@@ -12,6 +12,10 @@
 # redactor
 /.idea
 
+# vs / vscode
+.vs
+.vscode
+
 # assets
 # /public/media
 # /src/_metronic/_assets/js
