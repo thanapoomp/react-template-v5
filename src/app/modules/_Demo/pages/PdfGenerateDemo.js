@@ -45,7 +45,7 @@ function PdfGenerateDemo() {
 					aria-label="add"
 					onClick={handleDownloadPDF}
 				>
-					PDE DEMO
+					PDF DEMO
             <Icon>download</Icon>
 				</Fab>
 			</Grid>
