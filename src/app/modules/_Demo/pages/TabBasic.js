@@ -7,7 +7,6 @@ import Tab from '@material-ui/core/Tab';
 import Icon from '@material-ui/core/Icon';
 import TabPanel from '../../Common/components/TabPanel/TabPanel'
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
