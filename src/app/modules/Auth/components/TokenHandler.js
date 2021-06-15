@@ -77,7 +77,7 @@ function TokenHandler(props) {
     console.log("renew");
 
     //set time to renew
-    setTimeToRenew(exp.add(minute_before_exp_to_renew * -1, "minute"));
+    setTimeToRenew(exp.add(minute_before_exp_to_renew * -10, "minute"));
   };
 
   return (
