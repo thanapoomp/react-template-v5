@@ -35,10 +35,10 @@ function FormWithUploader() {
           formik.setSubmitting(false);
         })
         .catch((err) => {
-          alert(JSON.stringify(err.message,null,2))
+          alert(JSON.stringify(err.message, null, 2));
         })
         .finally(() => {
-          formik.setSubmitting(false)
+          formik.setSubmitting(false);
         });
     },
   });
@@ -56,7 +56,7 @@ function FormWithUploader() {
             materialui dropzone
           </a>
         </Grid>
-        {/* Start firstName */}
+        {/* Start Uploader Image */}
         <Grid item xs={12} lg={3}>
           <FormikUploader
             formik={formik}

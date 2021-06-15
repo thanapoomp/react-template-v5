@@ -3,7 +3,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import Alert from '@material-ui/lab/Alert';
+import Alert from "@material-ui/lab/Alert";
 import { useHistory } from "react-router";
 import FormikAutoComplete from "../../../Common/components/CustomFormik/FormikAutoComplete";
 import * as demoAxios from "../../_redux/demoAxios";
@@ -15,23 +15,17 @@ function FormWithAutoComplete() {
   });
 
   const loadProduct = (name) => {
-    return demoAxios.getProductFilter(
-      "name",
-      true,
-      1,
-      50,
-      name
-    );
+    return demoAxios.getProductFilter("name", true, 1, 50, name);
   };
 
   React.useEffect(() => {
-    // ตัวอย่าง สำหรับ load ข้อมูลเพื่อ show 
+    // ตัวอย่าง สำหรับ load ข้อมูลเพื่อ show
     let id = 1;
     demoAxios
       .getProduct(id)
       .then((res) => {
         if (res.data.isSuccess) {
-            let productToSet = {id: res.data.data.id,name: res.data.data.name}
+          let productToSet = { id: res.data.data.id, name: res.data.data.name };
           setState({
             ...state,
             product: productToSet,
@@ -65,9 +59,11 @@ function FormWithAutoComplete() {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <Alert severity="info" style={{marginBottom:10}}>ลองพิมพ์ So, sa</Alert>
+      <Alert severity="info" style={{ marginBottom: 10 }}>
+        ลองพิมพ์ So, sa
+      </Alert>
       <Grid container spacing={3}>
-        {/* relatedEmployee */}
+        {/* AutoComplete  */}
         <Grid item xs={12} lg={3}>
           <FormikAutoComplete
             formik={formik}
