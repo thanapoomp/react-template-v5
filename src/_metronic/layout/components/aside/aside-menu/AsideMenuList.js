@@ -285,16 +285,33 @@ export function AsideMenuList({ layoutProps }) {
                 {/*begin: Redux Demo*/}
                 <li
                   className={`menu-item ${getMenuItemActive(
-                    "/reduxDemo",
+                    "/demo/reduxDemo",
                     false
                   )}`}
                   aria-haspopup="true"
                 >
-                  <NavLink className="menu-link" to="/reduxDemo">
+                  <NavLink className="menu-link" to="/demo/reduxDemo">
                     <span className="svg-icon menu-icon">
                       <DvrIcon></DvrIcon>
                     </span>
                     <span className="menu-text">ReduxDemo</span>
+                  </NavLink>
+                </li>
+                {/* end redux demo */}
+
+                {/*begin: Redux Demo*/}
+                <li
+                  className={`menu-item ${getMenuItemActive(
+                    "/demo/tabBasic",
+                    false
+                  )}`}
+                  aria-haspopup="true"
+                >
+                  <NavLink className="menu-link" to="/demo/tabBasic">
+                    <span className="svg-icon menu-icon">
+                      <DvrIcon></DvrIcon>
+                    </span>
+                    <span className="menu-text">TabBasic</span>
                   </NavLink>
                 </li>
                 {/* end redux demo */}

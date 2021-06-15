@@ -31,6 +31,7 @@ import PrintComponent from "./modules/_Demo/pages/PrintComponent";
 import FormWithTextMaskCardId from "./modules/_Demo/pages/formComponents/FormWithTextMaskCardId";
 import FormWithTextNumber from "./modules/_Demo/pages/formComponents/FormWithTextNumber";
 import FormWithUploader from "./modules/_Demo/pages/formComponents/FormWithUploader";
+import TabBasic from './modules/_Demo/pages/TabBasic'
 
 import ChartDrillDownDemo from "./modules/_Demo/pages/ChartDrillDownDemo";
 import QRReaderDemo from "./modules/_Demo/pages/QRReaderDemo";
@@ -45,13 +46,13 @@ export default function BasePage(props) {
         {/* Start Demo part สามารถ comment ได้ */}
         <>
           <ContentRoute exact path="/alert" component={AlertDemo} title='alert' />
-          <ContentRoute exact path="/reduxDemo" component={ReduxDemo} title='reduxDemo' />
           <PrivateRoute
             exact
             path="/test"
             roles={[ROLES.admin, ROLES.developer]}
             component={Test}
           />
+          <ContentRoute exact path="/demo/reduxDemo" component={ReduxDemo} title='reduxDemo' />
           <ContentRoute exact path="/demo/formDemo" component={FormDemo} title='formDemo' />
           <ContentRoute
             exact
@@ -191,6 +192,12 @@ export default function BasePage(props) {
             path="/demo/datatableList"
             component={DatatableListDemo}
             title='DatatableListDemo'
+          />
+                    <ContentRoute
+            exact
+            path="/demo/tabBasic"
+            component={TabBasic}
+            title='Tab Basic'
           />
         </>
         {/* End Demo part สามารถ comment ได้ */}
