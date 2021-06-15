@@ -8,15 +8,10 @@ import {
 } from "../../Common/components/SweetAlert";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import { Helmet } from "react-helmet";
-import * as CONST from "../../../../Constants";
 
 function AlertDemo() {
   return (
     <Grid container direction="column" justify="center" alignItems="center">
-      <Helmet>
-        <title>{CONST.APP_INFO.name} | Alert Demo</title>
-      </Helmet>
       <a
         rel="noreferrer noopener"
         target="_blank"

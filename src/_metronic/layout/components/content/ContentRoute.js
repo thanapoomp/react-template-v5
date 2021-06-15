@@ -1,11 +1,14 @@
 import React from "react";
-import {Route} from "react-router-dom";
-import {Content} from "./Content";
+import PropTypes from 'prop-types'
+import { Route } from "react-router-dom";
+import { Content } from "./Content";
+import { Helmet } from "react-helmet";
+import * as CONST from "../../../../Constants";
 
 export function ContentRoute({ children, component, render, ...props }) {
   return (
     <Route {...props}>
-      {routeProps => {
+      {(routeProps) => {
         if (typeof children === "function") {
           return <Content>{children(routeProps)}</Content>;
         }
@@ -20,7 +23,12 @@ export function ContentRoute({ children, component, render, ...props }) {
 
         if (component) {
           return (
-            <Content>{React.createElement(component, routeProps)}</Content>
+            <Content>
+              <Helmet>
+                <title>{CONST.APP_INFO.name}: {props.title}</title>
+              </Helmet>
+              {React.createElement(component, routeProps)}
+            </Content>
           );
         }
 
@@ -33,3 +41,12 @@ export function ContentRoute({ children, component, render, ...props }) {
     </Route>
   );
 }
+
+ContentRoute.propTypes = {
+  title: PropTypes.string,
+};
+
+// Same approach for defaultProps too
+ContentRoute.defaultProps = {
+  title: 'please-set-title',
+};

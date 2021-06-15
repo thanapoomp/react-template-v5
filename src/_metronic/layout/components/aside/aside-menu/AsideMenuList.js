@@ -7,7 +7,6 @@ import SVG from "react-inlinesvg";
 import { toAbsoluteUrl, checkIsActive } from "../../../../_helpers";
 import { useSelector } from "react-redux";
 import { ROLES } from "../../../../../Constants";
-import Hoc from "../../../../../app/modules/Common/components/Hoc";
 import DvrIcon from "@material-ui/icons/Dvr";
 import Icon from "@material-ui/core/Icon";
 
@@ -60,7 +59,7 @@ export function AsideMenuList({ layoutProps }) {
         <>
           {/* Custom roles */}
           {isShowMenu([ROLES.admin, ROLES.Manager]) && (
-            <Hoc>
+            <>
               {/* begin::section */}
               <li className="menu-section ">
                 <h4 className="menu-text">Demo Custom roles</h4>
@@ -84,7 +83,7 @@ export function AsideMenuList({ layoutProps }) {
                 </NavLink>
               </li>
               {/*end::1 Level*/}
-            </Hoc>
+            </>
           )}
 
           {/* Menu Example */}

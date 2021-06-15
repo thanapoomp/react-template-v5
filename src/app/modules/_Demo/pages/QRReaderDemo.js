@@ -76,6 +76,12 @@ function QRReaderDemo(props) {
   };
 
   React.useEffect(() => {
+    return () => {
+      // cleanup
+    }
+  }, [])
+
+  React.useEffect(() => {
     if (scanResultFile !== "") {
       swal.swalSuccess("Success", scanResultFile);
       setScanResultFile("");

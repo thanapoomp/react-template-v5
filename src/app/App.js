@@ -9,8 +9,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Routes } from "../app/Routes";
 import { I18nProvider } from "../_metronic/i18n";
 import { LayoutSplashScreen, MaterialThemeProvider } from "../_metronic/layout";
-import * as CONST from "../Constants";
-import { Helmet } from "react-helmet";
+// import * as CONST from "../Constants";
+// import { Helmet } from "react-helmet";
 
 export default function App({ store, persistor, basename }) {
   return (
@@ -29,9 +29,9 @@ export default function App({ store, persistor, basename }) {
                 {/* Render routes with provided `Layout`. */}
                 <Routes />
               </I18nProvider>
-              <Helmet>
+              {/* <Helmet>
                 <title>{CONST.APP_INFO.name}</title>
-              </Helmet>
+              </Helmet> */}
             </MaterialThemeProvider>
           </HashRouter>
         </React.Suspense>
