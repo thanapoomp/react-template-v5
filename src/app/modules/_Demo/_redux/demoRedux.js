@@ -1,6 +1,7 @@
 
 // action type บอกว่า Redux ตัวนี้ สามารถทำอะไรได้บ้าง 
 export const actionTypes = {
+  RESET: '[Reset demo] Action',
   ADD_PLAYER: '[Add player] Action',
   UPDATE_LIGHTSTATUS: "[Update Light status] Action",
   UPDATE_IMPOSTER: '[Update imposter] Action',
@@ -22,6 +23,10 @@ const initialState = {
 // reducer แต่ละ Action จะไป update State อย่างไร
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+
+    case actionTypes.RESET: {
+      return initialState
+    }
 
     case actionTypes.ADD_PLAYER: {
       return { ...state, playerList: action.payload };
@@ -54,6 +59,7 @@ export const reducer = (state = initialState, action) => {
 
 //action เอาไว้เรียกจากข้างนอก เพื่อเปลี่ยน state
 export const actions = {
+  reset: () => ({type: actionTypes.RESET}),
   addPlayer: (payload) => ({ type: actionTypes.ADD_PLAYER, payload }),
   updateImposter: (payload) => ({ type: actionTypes.UPDATE_IMPOSTER, payload }),
   updateLightStatus: (payload) => ({ type: actionTypes.UPDATE_LIGHTSTATUS, payload }),
