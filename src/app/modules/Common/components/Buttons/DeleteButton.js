@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-imports */
 import React from "react";
+import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { red } from '@material-ui/core/colors';
@@ -28,5 +29,18 @@ function DeleteButton(props) {
   );
 }
 
+DeleteButton.propTypes = {
+  name: PropTypes.string,
+  disabled: PropTypes.bool,
+  label: PropTypes.string,
+  fullWidth: PropTypes.bool
+};
+
+DeleteButton.defaultProps = {
+  name: 'please-set-name',
+  disabled: false,
+  label: 'please-set-label',
+  fullWidth: true
+};
 
 export default DeleteButton;

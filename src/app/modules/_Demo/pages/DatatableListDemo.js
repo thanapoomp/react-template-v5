@@ -289,7 +289,7 @@ function DatatableListDemo(props) {
     <div>
       <Paper elevation={3} className={classes.paper}>
         <Grid container spacing={3}>
-          <Grid item xs={8} sm={4}>
+          <Grid item xs={8} sm={4} lg={4}>
             <TextField
               name="productGroupStatus"
               label="สถานะการใช้งาน"
@@ -303,23 +303,14 @@ function DatatableListDemo(props) {
               <MenuItem value={2}>ไม่ใช้งาน</MenuItem>
             </TextField>
           </Grid>
-          <Grid item xs={8} sm={4}>
+          <Grid item xs={8} sm={4} lg={4}>
             <FormikTextField
               name="productGroupName"
               formik={formik}
               label="ค้นหา"
             ></FormikTextField>
           </Grid>
-        </Grid>
-
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={12} lg={4}>
             <ViewButton onClick={formik.handleSubmit} fullWidth>
               {" "}
               ค้นหา{" "}
