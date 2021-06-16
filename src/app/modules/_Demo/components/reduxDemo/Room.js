@@ -25,6 +25,9 @@ function Room() {
             <h1>
                 Light Status : {demoReducer.lightState}
             </h1>
+            <h1>
+                Count : {demoReducer.count}
+            </h1>
         </div>
     )
 }
