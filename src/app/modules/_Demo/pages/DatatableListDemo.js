@@ -38,7 +38,7 @@ function DatatableListDemo(props) {
       searchProductGroupStatus: 0,
       searchProductGroupName: "",
     },
-    lastUpdate: null
+    lastUpdate: new Date()
   });
 
   const [totalRecords, setTotalRecords] = React.useState(0);
@@ -79,7 +79,7 @@ function DatatableListDemo(props) {
         searchProductGroupStatus: values.productGroupStatus,
         searchProductGroupName: values.productGroupName,
       },
-      lastUpdate: dayjs()
+      lastUpdate: new Date()
     }
     setPaginated(newPaginated);
   };
