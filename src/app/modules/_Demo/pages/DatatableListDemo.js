@@ -5,12 +5,14 @@ import React from "react";
 import * as demoAxios from "../_redux/demoAxios";
 import { Chip, Icon } from "@material-ui/core";
 import DoneIcon from "@material-ui/icons/Done";
-import {  Paper, Grid } from "@material-ui/core";
+import { Paper, Grid } from "@material-ui/core";
 import EditButton from "../../Common/components/Buttons/EditButton";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 import StandardDataTable from "../../Common/components/DataTable/StandardDataTable";
 import SearchBox from "../components/datatableDemo/SearchBox";
+import ColumnDateTime from "../../Common/components/DataTable/ColumnDateTime";
+import ColumnNumber from "../../Common/components/DataTable/ColumnNumber";
 
 var flatten = require("flat");
 
@@ -38,7 +40,7 @@ function DatatableListDemo(props) {
       searchProductGroupStatus: 0,
       searchProductGroupName: "",
     },
-    lastUpdate: null
+    lastUpdate: null,
   });
 
   const [totalRecords, setTotalRecords] = React.useState(0);
@@ -79,8 +81,8 @@ function DatatableListDemo(props) {
         searchProductGroupStatus: values.productGroupStatus,
         searchProductGroupName: values.productGroupName,
       },
-      lastUpdate: dayjs()
-    }
+      lastUpdate: dayjs(),
+    };
     setPaginated(newPaginated);
   };
 
@@ -150,19 +152,27 @@ function DatatableListDemo(props) {
       options: {
         customBodyRenderLite: (dataIndex, rowIndex) => {
           return (
-            <Grid
-              style={{ padding: 0, margin: 0 }}
-              container
-              direction="row"
-              justify="flex-start"
-              alignItems="center"
-            >
-              {dayjs(data[dataIndex].createdDate).format("DD/MM/YYYY")}
-            </Grid>
+            <ColumnDateTime Data={data[dataIndex].createdDate}></ColumnDateTime>
           );
         },
       },
     },
+
+    {
+      name: "จำนวน",
+      options: {
+        customBodyRenderLite: (dataIndex, rowIndex) => {
+          return (
+            <ColumnNumber
+              Data={"10000"}
+              thousandSeparator
+              isNumericString
+            ></ColumnNumber>
+          );
+        },
+      },
+    },
+
     {
       name: "",
       options: {
