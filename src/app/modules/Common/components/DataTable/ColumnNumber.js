@@ -6,9 +6,6 @@ import { Grid } from "@material-ui/core";
 import NumberFormat from "react-number-format";
 
 function ColumnNumber(props) {
-  function currencyFormat(num) {
-    return num.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-  }
 
   return (
     <div>
