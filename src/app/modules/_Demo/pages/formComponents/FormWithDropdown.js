@@ -3,8 +3,9 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikDropdown from "../../../Common/components/CustomFormik/FormikDropdown";
 import { useHistory } from "react-router";
+import FormikDropdown from "../../../Common/components/CustomFormik/FormikDropdown";
+import FormikRouterPrompt from '../../../Common/components/CustomFormik/FormikRouterPrompt'
 
 function FormWithDropdown() {
   const history = useHistory();
@@ -39,11 +40,13 @@ function FormWithDropdown() {
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
       formik.setSubmitting(false);
+      formik.resetForm()
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit}>
+      <FormikRouterPrompt formik={formik}></FormikRouterPrompt>
       <Grid container spacing={3}>
         {/* Title */}
         <Grid item xs={12} lg={3}>
@@ -72,7 +75,7 @@ function FormWithDropdown() {
         <Grid item xs={12} lg={3}>
           <Button
             type="submit"
-            disabled={formik.isSubmitting}
+            disabled={formik.isSubmitting || !formik.dirty}
             fullWidth
             color="primary"
             variant="contained"
@@ -99,6 +102,8 @@ function FormWithDropdown() {
       error: {JSON.stringify(formik.errors)}
       <br></br>
       touched: {JSON.stringify(formik.touched)}
+      <br></br>
+      dirty: {JSON.stringify(formik.dirty)}
     </form>
   );
 }

@@ -3,8 +3,9 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikCheckBoxGroup from "../../../Common/components/CustomFormik/FormikCheckBoxGroup";
 import { useHistory } from "react-router";
+import FormikCheckBoxGroup from "../../../Common/components/CustomFormik/FormikCheckBoxGroup";
+import FormikRouterPrompt from "../../../Common/components/CustomFormik/FormikRouterPrompt";
 
 function FormWithCheckboxGroup() {
   const history = useHistory();
@@ -14,7 +15,7 @@ function FormWithCheckboxGroup() {
       { id: 2, name: "Shopping" },
       { id: 3, name: "Jogging" },
     ],
-    selectedHobbies:[1,2]
+    selectedHobbies: [1, 2],
   });
 
   const formik = useFormik({
@@ -22,29 +23,31 @@ function FormWithCheckboxGroup() {
     validate: (values) => {
       const errors = {};
 
-      if (values.hobbies.length===0) {
-          errors.hobbies = 'Please choose at least 1 hobby'
+      if (values.selectedHobbies.length === 0) {
+        errors.selectedHobbies = "Please choose at least 1 hobby";
       }
 
       return errors;
     },
     initialValues: {
-      hobbies: state.selectedHobbies
+      selectedHobbies: state.selectedHobbies,
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
       formik.setSubmitting(false);
+      formik.resetForm()
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit}>
+      <FormikRouterPrompt formik={formik}></FormikRouterPrompt>
       <Grid container spacing={3}>
         {/* Hobby */}
         <Grid item xs={12} lg={6}>
           <FormikCheckBoxGroup
             formik={formik}
-            name="hobbies"
+            name="selectedHobbies"
             label="Hobbies"
             data={state.hobbyList}
           />
@@ -53,7 +56,7 @@ function FormWithCheckboxGroup() {
         <Grid item xs={12} lg={3}>
           <Button
             type="submit"
-            disabled={formik.isSubmitting}
+            disabled={formik.isSubmitting || !formik.dirty}
             fullWidth
             color="primary"
             variant="contained"
@@ -80,6 +83,8 @@ function FormWithCheckboxGroup() {
       error: {JSON.stringify(formik.errors)}
       <br></br>
       touched: {JSON.stringify(formik.touched)}
+      <br></br>
+      dirty: {JSON.stringify(formik.dirty)}
     </form>
   );
 }

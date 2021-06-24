@@ -6,6 +6,7 @@ import { Grid, Button } from "@material-ui/core/";
 import Alert from "@material-ui/lab/Alert";
 import { useHistory } from "react-router";
 import FormikAutoComplete from "../../../Common/components/CustomFormik/FormikAutoComplete";
+import FormikRouterPrompt from '../../../Common/components/CustomFormik/FormikRouterPrompt'
 import * as demoAxios from "../../_redux/demoAxios";
 
 function FormWithAutoComplete() {
@@ -54,11 +55,13 @@ function FormWithAutoComplete() {
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
       formik.setSubmitting(false);
+      formik.resetForm()
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit}>
+      <FormikRouterPrompt formik={formik}></FormikRouterPrompt>
       <Alert severity="info" style={{ marginBottom: 10 }}>
         ลองพิมพ์ So, sa
       </Alert>
@@ -78,7 +81,7 @@ function FormWithAutoComplete() {
 
         <Grid item xs={12} lg={3}>
           <Button
-            disabled={formik.isSubmitting}
+            disabled={formik.isSubmitting || !formik.dirty}
             type="submit"
             fullWidth
             color="primary"
@@ -106,6 +109,8 @@ function FormWithAutoComplete() {
       error: {JSON.stringify(formik.errors)}
       <br></br>
       touched: {JSON.stringify(formik.touched)}
+      <br></br>
+      dirty: {JSON.stringify(formik.dirty)}
     </form>
   );
 }

@@ -3,8 +3,8 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikUploader from "../../../Common/components/CustomFormik/FormikUploader";
 import { useHistory } from "react-router";
+import FormikUploader from "../../../Common/components/CustomFormik/FormikUploader";
 import * as demoAxios from "../../_redux/demoAxios";
 
 function FormWithUploader() {
@@ -96,7 +96,7 @@ function FormWithUploader() {
       <br></br>
       error: {JSON.stringify(formik.errors)}
       <br></br>
-      touched: {JSON.stringify(formik.touched)}
+      touched: {JSON.stringify(formik.touched)}      
     </form>
   );
 }

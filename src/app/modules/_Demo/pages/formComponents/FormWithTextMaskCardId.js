@@ -4,8 +4,10 @@ import React from "react";
 import { useFormik } from "formik";
 import { useHistory } from "react-router";
 import { Grid, Button } from "@material-ui/core/";
+import {  } from "react-router";
 import { validateThaiCitizenID } from '../../../Common/functions/CommonValidators'
 import FormikTextMaskCardId from "../../../Common/components/CustomFormik/FormikTextMaskCardId";
+import FormikRouterPrompt from '../../../Common/components/CustomFormik/FormikRouterPrompt'
 
 
 function FormWithTextMaskCardId() {
@@ -33,11 +35,13 @@ function FormWithTextMaskCardId() {
       values = {...values,cardId: cardId }
       alert(JSON.stringify(values, null, 2));
       formik.setSubmitting(false);
+      formik.resetForm()
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit}>
+      <FormikRouterPrompt formik={formik}></FormikRouterPrompt>
       <Grid container spacing={3}>
         {/* Start cardId */}
         <Grid item xs={12} lg={3}>
@@ -50,7 +54,13 @@ function FormWithTextMaskCardId() {
         </Grid>
 
         <Grid item xs={12} lg={3}>
-          <Button type="submit" disabled={formik.isSubmitting} fullWidth color="primary" variant="contained">
+          <Button
+            type="submit"
+            disabled={formik.isSubmitting || !formik.dirty}
+            fullWidth
+            color="primary"
+            variant="contained"
+          >
             Submit
           </Button>
         </Grid>
@@ -73,6 +83,8 @@ function FormWithTextMaskCardId() {
       error: {JSON.stringify(formik.errors)}
       <br></br>
       touched: {JSON.stringify(formik.touched)}
+      <br></br>
+      dirty: {JSON.stringify(formik.dirty)}
     </form>
   );
 }

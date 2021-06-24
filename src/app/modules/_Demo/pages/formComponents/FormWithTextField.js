@@ -3,8 +3,9 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikTextField from "../../../Common/components/CustomFormik/FormikTextField";
 import { useHistory } from "react-router";
+import FormikTextField from "../../../Common/components/CustomFormik/FormikTextField";
+import FormikRouterPrompt from '../../../Common/components/CustomFormik/FormikRouterPrompt'
 
 function FormWithTextField() {
   const history = useHistory();
@@ -29,8 +30,14 @@ function FormWithTextField() {
       lastName: state.lastName,
     },
     onSubmit: (values) => {
+      //submit .... 
+
       alert(JSON.stringify(values, null, 2));
+
+      //reset submitting
       formik.setSubmitting(false);
+
+      formik.resetForm()
     },
   });
 
@@ -53,7 +60,13 @@ function FormWithTextField() {
         </Grid>
 
         <Grid item xs={12} lg={3}>
-          <Button type="submit" disabled={formik.isSubmitting} fullWidth color="primary" variant="contained">
+          <Button
+            type="submit"
+            disabled={formik.isSubmitting || !formik.dirty}
+            fullWidth
+            color="primary"
+            variant="contained"
+          >
             Submit
           </Button>
         </Grid>
@@ -70,12 +83,15 @@ function FormWithTextField() {
           </Button>
         </Grid>
       </Grid>
+      <FormikRouterPrompt formik={formik}></FormikRouterPrompt>
       <br></br>
       values: {JSON.stringify(formik.values)}
       <br></br>
       error: {JSON.stringify(formik.errors)}
       <br></br>
       touched: {JSON.stringify(formik.touched)}
+      <br></br>
+      dirty: {JSON.stringify(formik.dirty)}
     </form>
   );
 }

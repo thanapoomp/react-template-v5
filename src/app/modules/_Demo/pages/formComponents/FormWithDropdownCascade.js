@@ -3,10 +3,11 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Grid, Button } from "@material-ui/core/";
-import FormikDropdown from "../../../Common/components/CustomFormik/FormikDropdown";
-import * as CONST from "../../../../../Constants";
 import Axios from "axios";
 import { useHistory } from "react-router";
+import FormikDropdown from "../../../Common/components/CustomFormik/FormikDropdown";
+import * as CONST from "../../../../../Constants";
+import FormikRouterPrompt from '../../../Common/components/CustomFormik/FormikRouterPrompt'
 
 function FormWithDropdownCascade(props) {
   const api_get_productGroup_url = `${CONST.API_URL}/ProductGroup/getAllProductGroup/`;
@@ -34,6 +35,8 @@ function FormWithDropdownCascade(props) {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      formik.setSubmitting(false)
+      formik.resetForm()
     },
   });
 
@@ -78,6 +81,7 @@ function FormWithDropdownCascade(props) {
 
   return (
     <form onSubmit={formik.handleSubmit}>
+      <FormikRouterPrompt formik={formik}></FormikRouterPrompt>
       <Grid container spacing={2}>
         {/* ProductGroup */}
         <Grid item xs={12} lg={2}>
@@ -109,7 +113,13 @@ function FormWithDropdownCascade(props) {
         </Grid>
 
         <Grid item xs={12} lg={3}>
-          <Button color="primary" type="submit" fullWidth variant="contained">
+          <Button
+            color="primary"
+            disabled={formik.isSubmitting || !formik.dirty}
+            type="submit"
+            fullWidth
+            variant="contained"
+          >
             Submit
           </Button>
         </Grid>
@@ -132,6 +142,8 @@ function FormWithDropdownCascade(props) {
       error: {JSON.stringify(formik.errors)}
       <br></br>
       touched: {JSON.stringify(formik.touched)}
+      <br></br>
+      dirty: {JSON.stringify(formik.dirty)}
     </form>
   );
 }
