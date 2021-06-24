@@ -31,7 +31,6 @@ export const getProductGroupFilter = (
   page,
   recordsPerPage,
   Name,
-  StatusId
 ) => {
   let payload = {
     page,
@@ -39,7 +38,6 @@ export const getProductGroupFilter = (
     orderingField,
     ascendingOrder,
     Name,
-    StatusId,
   };
   return axios.get(
     encodeURLWithParams(`${PRODUCTGROUP_URL}/getProductGroupFilter`, payload)

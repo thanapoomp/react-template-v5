@@ -3,8 +3,6 @@
 
 import React from "react";
 import * as demoAxios from "../_redux/demoAxios";
-import { Chip, Icon } from "@material-ui/core";
-import DoneIcon from "@material-ui/icons/Done";
 import { Paper, Grid } from "@material-ui/core";
 import EditButton from "../../Common/components/Buttons/EditButton";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,6 +11,7 @@ import StandardDataTable from "../../Common/components/DataTable/StandardDataTab
 import SearchBox from "../components/datatableDemo/SearchBox";
 import ColumnDateTime from "../../Common/components/DataTable/ColumnDateTime";
 import ColumnNumber from "../../Common/components/DataTable/ColumnNumber";
+import ColumnIsActive from "../../Common/components/DataTable/ColumnIsActive";
 
 var flatten = require("flat");
 
@@ -37,7 +36,6 @@ function DatatableListDemo(props) {
     orderingField: "",
     ascendingOrder: true,
     searchValues: {
-      searchProductGroupStatus: 0,
       searchProductGroupName: "",
     },
   });
@@ -54,7 +52,6 @@ function DatatableListDemo(props) {
         paginated.page,
         paginated.recordsPerPage,
         paginated.searchValues.searchProductGroupName,
-        paginated.searchValues.searchProductGroupStatus
       )
       .then((res) => {
         if (res.data.isSuccess) {
@@ -76,7 +73,6 @@ function DatatableListDemo(props) {
     setPaginated({
       ...paginated,
       searchValues: {
-        searchProductGroupStatus: values.productGroupStatus,
         searchProductGroupName: values.productGroupName,
       },
     });
@@ -96,50 +92,13 @@ function DatatableListDemo(props) {
       },
     },
     {
-      name: "statusId",
+      name: "isActive",
       label: "สถานะ",
       options: {
         customBodyRenderLite: (dataIndex, rowIndex) => {
-          if (data[dataIndex].statusId === 1) {
-            return (
-              <Grid
-                style={{ padding: 0, margin: 0 }}
-                container
-                direction="row"
-                justify="flex-start"
-                alignItems="center"
-              >
-                <Chip
-                  color="primary"
-                  icon={<DoneIcon style={{ color: "#fff" }} />}
-                  style={{ color: "#fff" }}
-                  label="ใช้งาน"
-                />
-              </Grid>
-            );
-          } else {
-            return (
-              <Grid
-                style={{ padding: 0, margin: 0 }}
-                container
-                direction="row"
-                justify="flex-start"
-                alignItems="center"
-              >
-                <Chip
-                  color="primary"
-                  icon={
-                    <Icon
-                      style={{ backgroundColor: "#e57373", color: "#fff" }}
-                      className="far fa-times-circle"
-                    ></Icon>
-                  }
-                  style={{ backgroundColor: "#e57373", color: "#fff" }}
-                  label="ไม่ใช้งาน"
-                />
-              </Grid>
-            );
-          }
+          return (
+            <ColumnIsActive value={data[dataIndex].isActive} activeText="ใช้งาน" inActiveText="ไม่ใช้งาน"></ColumnIsActive>
+          );
         },
       },
     },
@@ -148,7 +107,9 @@ function DatatableListDemo(props) {
       options: {
         customBodyRenderLite: (dataIndex, rowIndex) => {
           return (
-            <ColumnDateTime value={data[dataIndex].createdDate}></ColumnDateTime>
+            <ColumnDateTime
+              value={data[dataIndex].createdDate}
+            ></ColumnDateTime>
           );
         },
       },
