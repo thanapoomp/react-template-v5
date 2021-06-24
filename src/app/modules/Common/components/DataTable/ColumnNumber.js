@@ -4,6 +4,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import NumberFormat from "react-number-format";
+import PropTypes from "prop-types";
 
 function ColumnNumber(props) {
 
@@ -16,10 +17,19 @@ function ColumnNumber(props) {
         justify="flex-start"
         alignItems="center"
       >
-        <NumberFormat {...props} value={props.Data} displayType="text" />
+        <NumberFormat {...props} value={props.value} displayType="text" />
       </Grid>
     </div>
   );
 }
+
+ColumnNumber.propTypes = {
+  value: PropTypes.number
+};
+
+ColumnNumber.defaultProps = {
+  value: null,
+};
+
 
 export default ColumnNumber;

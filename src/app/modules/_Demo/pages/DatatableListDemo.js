@@ -160,7 +160,7 @@ function DatatableListDemo(props) {
         customBodyRenderLite: (dataIndex, rowIndex) => {
           return (
             <ColumnNumber
-              Data={"10000"}
+              value={1000}
               thousandSeparator
               isNumericString
             ></ColumnNumber>

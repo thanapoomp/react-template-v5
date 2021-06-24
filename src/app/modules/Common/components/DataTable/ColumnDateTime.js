@@ -25,7 +25,7 @@ function ColumnDateTime(props) {
 }
 
 ColumnDateTime.propTypes = {
-  value: PropTypes.object,
+  value: PropTypes.string,
   format: PropTypes.string,
   nullValueText: PropTypes.string
 };
