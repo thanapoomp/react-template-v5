@@ -3,6 +3,7 @@
 
 import React from "react";
 import { Grid } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 require("dayjs/locale/th");
 var dayjs = require("dayjs");
@@ -17,9 +18,22 @@ function ColumnDateTime(props) {
       justify="flex-start"
       alignItems="center"
     >
-      {dayjs(props.Data).format("DD/MM/YYYY HH:mm:ss")}
+      {props.value && dayjs(props.value).format(props.format)}
+      {!props.value && props.nullValueText}
     </Grid>
   );
 }
+
+ColumnDateTime.propTypes = {
+  value: PropTypes.object,
+  format: PropTypes.string,
+  nullValueText: PropTypes.string
+};
+
+ColumnDateTime.defaultProps = {
+  value: null,
+  format: "DD/MM/YYYY HH:mm:ss",
+  nullValueText: ""
+};
 
 export default ColumnDateTime;

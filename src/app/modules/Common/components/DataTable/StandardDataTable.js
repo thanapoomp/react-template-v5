@@ -92,7 +92,7 @@ StandardDataTable.defaultProps = {
   },
   setPaginated: () => {},
   data: [],
-  columns: {},
+  columns: [],
   totalRecords: 0
 };
 

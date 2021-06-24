@@ -40,7 +40,6 @@ function DatatableListDemo(props) {
       searchProductGroupStatus: 0,
       searchProductGroupName: "",
     },
-    lastUpdate: new Date(),
   });
 
   const [totalRecords, setTotalRecords] = React.useState(0);
@@ -74,16 +73,13 @@ function DatatableListDemo(props) {
   };
 
   const handleUpdateSearch = (values) => {
-    // alert(JSON.stringify(values));
-    let newPaginated = {
+    setPaginated({
       ...paginated,
       searchValues: {
         searchProductGroupStatus: values.productGroupStatus,
         searchProductGroupName: values.productGroupName,
       },
-      lastUpdate: new Date(),
-    };
-    setPaginated(newPaginated);
+    });
   };
 
   // column
@@ -152,7 +148,7 @@ function DatatableListDemo(props) {
       options: {
         customBodyRenderLite: (dataIndex, rowIndex) => {
           return (
-            <ColumnDateTime Data={data[dataIndex].createdDate}></ColumnDateTime>
+            <ColumnDateTime value={data[dataIndex].createdDate}></ColumnDateTime>
           );
         },
       },
